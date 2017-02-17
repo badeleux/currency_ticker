@@ -15,6 +15,7 @@ target 'CurrencyTickerKit' do
     pod 'Moya'
     pod 'Moya-Argo'
     pod 'Moya/ReactiveSwift'
+    pod 'Curry'
     
     target 'CurrencyTickerKitTests' do
         inherit! :search_paths

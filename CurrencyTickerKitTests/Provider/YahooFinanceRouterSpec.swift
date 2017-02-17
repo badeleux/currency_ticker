@@ -10,7 +10,7 @@ class YahooFinanceRouterSpec: QuickSpec {
             })
             
             it("CurrencyPair -> String", closure: {
-                expect(YahooCurrencyPair(from: "USD", to: "EUR").apiStringRepresentation()).to(equal("USDEUR"))
+                expect(YahooUSDCurrencyPair(to: "EUR").apiStringRepresentation()).to(equal("USDEUR"))
             })
         }
     }

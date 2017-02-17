@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.3.0)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
+  - Curry (3.0.0)
   - DZNEmptyDataSet (1.8.1)
   - EasyPeasy (1.4.1)
   - FoldingCell (2.0.3)
@@ -31,6 +32,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
+  - Curry
   - DZNEmptyDataSet
   - EasyPeasy
   - FoldingCell
@@ -47,6 +49,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Argo: 5db06502fc1222d83011f574243089dab25202ff
+  Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EasyPeasy: b8a2feebd47395aaf46bde178abcddd36c922d37
   FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
@@ -61,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftCharts: d263289cdc7fc955fef54ae3bc6529f696e69933
   SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
 
-PODFILE CHECKSUM: 4871cfb5c95f116f55de1f054b2ce4ed104585a6
+PODFILE CHECKSUM: 7c7197cbc154687e17d2272a9e7748a5ce42b8dc
 
 COCOAPODS: 1.2.0

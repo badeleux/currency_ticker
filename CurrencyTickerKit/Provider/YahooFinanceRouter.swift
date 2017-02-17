@@ -17,14 +17,19 @@ protocol APIStringRepresentable {
 
 enum YahooFinanceRouter {
     case currencyList
-    case exchangeRate(pair: YahooCurrencyPair)
+    case exchangeRate(pair: YahooCurrencyPairable)
     case historicalData(symbol: YahooCurrencySymbol, dateStart: Date, dateEnd: Date)
 }
 
 extension YahooFinanceRouter: TargetType {
     /// Provides stub data for use in testing.
     public var sampleData: Data {
-        return Data()
+        switch self {
+        case .currencyList:
+            return YahooCurrency.mockedJSON() ?? Data()
+        default:
+            return Data()
+        }
     }
     
     var task: Task {

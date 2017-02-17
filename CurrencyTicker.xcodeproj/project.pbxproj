@@ -33,6 +33,9 @@
 		ED88EF291E57A2370088B0C0 /* DateFormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */; };
 		ED88EF2B1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF2A1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift */; };
 		ED88EF321E57A6D00088B0C0 /* YahooFinance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF311E57A6D00088B0C0 /* YahooFinance.swift */; };
+		ED88EF351E57B2310088B0C0 /* currency_list.json in Resources */ = {isa = PBXBuildFile; fileRef = ED88EF341E57B2310088B0C0 /* currency_list.json */; };
+		EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */; };
+		EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295221E57B75100BF4F7A /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +144,9 @@
 		ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormattersSpec.swift; sourceTree = "<group>"; };
 		ED88EF2A1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinanceRouterSpec.swift; sourceTree = "<group>"; };
 		ED88EF311E57A6D00088B0C0 /* YahooFinance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinance.swift; sourceTree = "<group>"; };
+		ED88EF341E57B2310088B0C0 /* currency_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency_list.json; sourceTree = "<group>"; };
+		EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooCurrencySpec.swift; sourceTree = "<group>"; };
+		EDE295221E57B75100BF4F7A /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		F4CB033F4B55AAF1AD0D6305 /* Pods_CurrencyTickerKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickerKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickeriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -279,11 +285,13 @@
 		ED22F4F21E5767AD00E98912 /* CurrencyTickerKit */ = {
 			isa = PBXGroup;
 			children = (
+				ED88EF331E57B2150088B0C0 /* Resources */,
 				ED88EF221E579DC20088B0C0 /* Formatters */,
 				ED88EF1E1E5778500088B0C0 /* Provider */,
 				ED88EF1F1E5778500088B0C0 /* Model */,
 				ED22F4F31E5767AD00E98912 /* CurrencyTickerKit.h */,
 				ED22F4F41E5767AD00E98912 /* Info.plist */,
+				EDE295221E57B75100BF4F7A /* Bundle.swift */,
 			);
 			path = CurrencyTickerKit;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 		ED88EF251E57A1F40088B0C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +372,14 @@
 				ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */,
 			);
 			path = Formatters;
+			sourceTree = "<group>";
+		};
+		ED88EF331E57B2150088B0C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED88EF341E57B2310088B0C0 /* currency_list.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,6 +618,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED88EF351E57B2310088B0C0 /* currency_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED88EF321E57A6D00088B0C0 /* YahooFinance.swift in Sources */,
+				EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */,
 				ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */,
 				ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */,
 			);
@@ -812,6 +831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */,
 				ED88EF2B1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift in Sources */,
 				ED22F5011E5767AD00E98912 /* CurrencyTickerKitTests.swift in Sources */,
 				ED88EF291E57A2370088B0C0 /* DateFormattersSpec.swift in Sources */,
