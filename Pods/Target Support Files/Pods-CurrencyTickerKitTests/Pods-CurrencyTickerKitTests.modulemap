@@ -1,0 +1,6 @@
+framework module Pods_CurrencyTickerKitTests {
+  umbrella header "Pods-CurrencyTickerKitTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

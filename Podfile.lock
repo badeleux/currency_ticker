@@ -18,6 +18,8 @@ PODS:
   - Moya/ReactiveSwift (8.0.2):
     - Moya/Core
     - ReactiveSwift (~> 1.0)
+  - Nimble (6.0.1)
+  - Quick (1.0.0)
   - ReactiveCocoa (5.0.0):
     - ReactiveSwift (~> 1.0.0)
   - ReactiveSwift (1.0.0):
@@ -35,6 +37,8 @@ DEPENDENCIES:
   - Moya
   - Moya-Argo
   - Moya/ReactiveSwift
+  - Nimble
+  - Quick
   - ReactiveCocoa
   - ReactiveSwift
   - SwiftCharts (~> 0.5)
@@ -48,6 +52,8 @@ SPEC CHECKSUMS:
   FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
   Moya: 47f61da5b634aa71f676431b64ee0f81e976296d
   Moya-Argo: ae9a8c7d10e0ab052b22f215d1fe540d31bb32d3
+  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
   ReactiveCocoa: 60ef0da915b4f70c34ebecc3f4fb8f96af0e53d6
   ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
@@ -55,6 +61,6 @@ SPEC CHECKSUMS:
   SwiftCharts: d263289cdc7fc955fef54ae3bc6529f696e69933
   SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
 
-PODFILE CHECKSUM: 6f2d79cb18184be7a98f9333cbfc2ac06736bfb5
+PODFILE CHECKSUM: 4871cfb5c95f116f55de1f054b2ce4ed104585a6
 
 COCOAPODS: 1.2.0

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		206BD4606614E999CF2958D9 /* Pods_CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */; };
+		2212DD9F438256D157FEDEC6 /* Pods_CurrencyTickerKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CB033F4B55AAF1AD0D6305 /* Pods_CurrencyTickerKitTests.framework */; };
 		66491E240220DC7393784106 /* Pods_CurrencyTickerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5121658B7C693461887CA6B /* Pods_CurrencyTickerKit.framework */; };
 		B8BA370047EA28D6537F6200 /* Pods_CurrencyTicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABC2D405389120F5CFB7520 /* Pods_CurrencyTicker.framework */; };
 		ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CC1E57636C00E98912 /* AppDelegate.swift */; };
@@ -27,6 +28,11 @@
 		ED22F5291E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; };
 		ED22F52A1E5767BB00E98912 /* CurrencyTickeriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED22F5321E5768F200E98912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ED22F5311E5768F200E98912 /* Podfile */; };
+		ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */; };
+		ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */; };
+		ED88EF291E57A2370088B0C0 /* DateFormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */; };
+		ED88EF2B1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF2A1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift */; };
+		ED88EF321E57A6D00088B0C0 /* YahooFinance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF311E57A6D00088B0C0 /* YahooFinance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +106,10 @@
 		0ABC2D405389120F5CFB7520 /* Pods_CurrencyTicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		182C5605FE481F2F4EE0B128 /* Pods-CurrencyTickeriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickeriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS.debug.xcconfig"; sourceTree = "<group>"; };
 		195CC72906E70846232D04D4 /* Pods-CurrencyTickeriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickeriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS.release.xcconfig"; sourceTree = "<group>"; };
+		26844ADC12F9A8B01125200A /* Pods-CurrencyTickerKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKitTests/Pods-CurrencyTickerKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		27D29D0BDBC3E629DD611CCF /* Pods-CurrencyTickerKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKit/Pods-CurrencyTickerKit.debug.xcconfig"; sourceTree = "<group>"; };
 		4BC213EA2C44012B52D83B7C /* Pods-CurrencyTicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTicker/Pods-CurrencyTicker.release.xcconfig"; sourceTree = "<group>"; };
+		6659CFF561CD776AD7554C4D /* Pods-CurrencyTickerKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKitTests/Pods-CurrencyTickerKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		A03973A78B26BF2D3C3B8593 /* Pods-CurrencyTicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTicker/Pods-CurrencyTicker.debug.xcconfig"; sourceTree = "<group>"; };
 		A5121658B7C693461887CA6B /* Pods_CurrencyTickerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59C517FA44BAA1B1114A13B /* Pods-CurrencyTickerKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKit/Pods-CurrencyTickerKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +135,13 @@
 		ED22F51C1E5767BB00E98912 /* CurrencyTickeriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyTickeriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F5231E5767BB00E98912 /* CurrencyTickeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTickeriOSTests.swift; sourceTree = "<group>"; };
 		ED22F5251E5767BB00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED22F5311E5768F200E98912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		ED22F5311E5768F200E98912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinanceRouter.swift; sourceTree = "<group>"; };
+		ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormattersSpec.swift; sourceTree = "<group>"; };
+		ED88EF2A1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinanceRouterSpec.swift; sourceTree = "<group>"; };
+		ED88EF311E57A6D00088B0C0 /* YahooFinance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinance.swift; sourceTree = "<group>"; };
+		F4CB033F4B55AAF1AD0D6305 /* Pods_CurrencyTickerKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickerKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickeriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED22F4FA1E5767AD00E98912 /* CurrencyTickerKit.framework in Frameworks */,
+				2212DD9F438256D157FEDEC6 /* Pods_CurrencyTickerKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +208,8 @@
 				B59C517FA44BAA1B1114A13B /* Pods-CurrencyTickerKit.release.xcconfig */,
 				182C5605FE481F2F4EE0B128 /* Pods-CurrencyTickeriOS.debug.xcconfig */,
 				195CC72906E70846232D04D4 /* Pods-CurrencyTickeriOS.release.xcconfig */,
+				26844ADC12F9A8B01125200A /* Pods-CurrencyTickerKitTests.debug.xcconfig */,
+				6659CFF561CD776AD7554C4D /* Pods-CurrencyTickerKitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -203,6 +220,7 @@
 				0ABC2D405389120F5CFB7520 /* Pods_CurrencyTicker.framework */,
 				A5121658B7C693461887CA6B /* Pods_CurrencyTickerKit.framework */,
 				FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */,
+				F4CB033F4B55AAF1AD0D6305 /* Pods_CurrencyTickerKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,6 +279,9 @@
 		ED22F4F21E5767AD00E98912 /* CurrencyTickerKit */ = {
 			isa = PBXGroup;
 			children = (
+				ED88EF221E579DC20088B0C0 /* Formatters */,
+				ED88EF1E1E5778500088B0C0 /* Provider */,
+				ED88EF1F1E5778500088B0C0 /* Model */,
 				ED22F4F31E5767AD00E98912 /* CurrencyTickerKit.h */,
 				ED22F4F41E5767AD00E98912 /* Info.plist */,
 			);
@@ -270,6 +291,9 @@
 		ED22F4FF1E5767AD00E98912 /* CurrencyTickerKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				ED88EF251E57A1F40088B0C0 /* Model */,
+				ED88EF261E57A1F40088B0C0 /* Provider */,
+				ED88EF271E57A1F40088B0C0 /* Formatters */,
 				ED22F5001E5767AD00E98912 /* CurrencyTickerKitTests.swift */,
 				ED22F5021E5767AD00E98912 /* Info.plist */,
 			);
@@ -292,6 +316,53 @@
 				ED22F5251E5767BB00E98912 /* Info.plist */,
 			);
 			path = CurrencyTickeriOSTests;
+			sourceTree = "<group>";
+		};
+		ED88EF1E1E5778500088B0C0 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		ED88EF1F1E5778500088B0C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED88EF311E57A6D00088B0C0 /* YahooFinance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED88EF221E579DC20088B0C0 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		ED88EF251E57A1F40088B0C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED88EF261E57A1F40088B0C0 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				ED88EF2A1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		ED88EF271E57A1F40088B0C0 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,9 +452,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED22F50C1E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKitTests" */;
 			buildPhases = (
+				BC01D4856B144A518EE3A69D /* [CP] Check Pods Manifest.lock */,
 				ED22F4F51E5767AD00E98912 /* Sources */,
 				ED22F4F61E5767AD00E98912 /* Frameworks */,
 				ED22F4F71E5767AD00E98912 /* Resources */,
+				E122C25093E7B5BDBACB7012 /* [CP] Embed Pods Frameworks */,
+				3A83B87CB63643CA4D2BA2A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -459,6 +533,7 @@
 					ED22F4F01E5767AD00E98912 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EWQZR3J8HN;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					ED22F4F81E5767AD00E98912 = {
@@ -583,6 +658,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTickerKit/Pods-CurrencyTickerKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3A83B87CB63643CA4D2BA2A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTickerKitTests/Pods-CurrencyTickerKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3C247FC3A00F17B31FC41D1F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,6 +733,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BC01D4856B144A518EE3A69D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C653499BEEE3B080A7F2D9F4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -656,6 +761,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E122C25093E7B5BDBACB7012 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTickerKitTests/Pods-CurrencyTickerKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -682,6 +802,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED88EF321E57A6D00088B0C0 /* YahooFinance.swift in Sources */,
+				ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */,
+				ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,7 +812,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED88EF2B1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift in Sources */,
 				ED22F5011E5767AD00E98912 /* CurrencyTickerKitTests.swift in Sources */,
+				ED88EF291E57A2370088B0C0 /* DateFormattersSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +990,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A03973A78B26BF2D3C3B8593 /* Pods-CurrencyTicker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EWQZR3J8HN;
 				INFOPLIST_FILE = CurrencyTicker/Info.plist;
@@ -879,6 +1005,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BC213EA2C44012B52D83B7C /* Pods-CurrencyTicker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EWQZR3J8HN;
 				INFOPLIST_FILE = CurrencyTicker/Info.plist;
@@ -923,6 +1050,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27D29D0BDBC3E629DD611CCF /* Pods-CurrencyTickerKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -936,6 +1064,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickerKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -946,6 +1075,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B59C517FA44BAA1B1114A13B /* Pods-CurrencyTickerKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -967,6 +1097,7 @@
 		};
 		ED22F50D1E5767AD00E98912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26844ADC12F9A8B01125200A /* Pods-CurrencyTickerKitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = EWQZR3J8HN;
@@ -981,6 +1112,7 @@
 		};
 		ED22F50E1E5767AD00E98912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6659CFF561CD776AD7554C4D /* Pods-CurrencyTickerKitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = EWQZR3J8HN;
@@ -1086,6 +1218,7 @@
 				ED22F4E81E57636C00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED22F4E91E57636C00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerTests" */ = {
 			isa = XCConfigurationList;
@@ -1094,6 +1227,7 @@
 				ED22F4EB1E57636C00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED22F5081E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKit" */ = {
 			isa = XCConfigurationList;
@@ -1102,6 +1236,7 @@
 				ED22F50A1E5767AD00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED22F50C1E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKitTests" */ = {
 			isa = XCConfigurationList;
@@ -1110,6 +1245,7 @@
 				ED22F50E1E5767AD00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED22F52B1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOS" */ = {
 			isa = XCConfigurationList;
@@ -1118,6 +1254,7 @@
 				ED22F52D1E5767BB00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED22F52E1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1126,6 +1263,7 @@
 				ED22F5301E5767BB00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
