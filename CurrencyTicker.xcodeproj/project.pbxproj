@@ -13,6 +13,16 @@
 		ED22F4D41E57636C00E98912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D31E57636C00E98912 /* Assets.xcassets */; };
 		ED22F4D71E57636C00E98912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D51E57636C00E98912 /* LaunchScreen.storyboard */; };
 		ED22F4E21E57636C00E98912 /* CurrencyTickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4E11E57636C00E98912 /* CurrencyTickerTests.swift */; };
+		ED22F4FA1E5767AD00E98912 /* CurrencyTickerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F4F11E5767AD00E98912 /* CurrencyTickerKit.framework */; };
+		ED22F5011E5767AD00E98912 /* CurrencyTickerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F5001E5767AD00E98912 /* CurrencyTickerKitTests.swift */; };
+		ED22F5031E5767AD00E98912 /* CurrencyTickerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = ED22F4F31E5767AD00E98912 /* CurrencyTickerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED22F5061E5767AD00E98912 /* CurrencyTickerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F4F11E5767AD00E98912 /* CurrencyTickerKit.framework */; };
+		ED22F5071E5767AD00E98912 /* CurrencyTickerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F4F11E5767AD00E98912 /* CurrencyTickerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED22F51D1E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; };
+		ED22F5241E5767BB00E98912 /* CurrencyTickeriOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F5231E5767BB00E98912 /* CurrencyTickeriOSTests.swift */; };
+		ED22F5261E5767BB00E98912 /* CurrencyTickeriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ED22F5161E5767BB00E98912 /* CurrencyTickeriOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED22F5291E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; };
+		ED22F52A1E5767BB00E98912 /* CurrencyTickeriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +33,64 @@
 			remoteGlobalIDString = ED22F4C81E57636C00E98912;
 			remoteInfo = CurrencyTicker;
 		};
+		ED22F4FB1E5767AD00E98912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED22F4C11E57636C00E98912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED22F4F01E5767AD00E98912;
+			remoteInfo = CurrencyTickerKit;
+		};
+		ED22F4FD1E5767AD00E98912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED22F4C11E57636C00E98912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED22F4C81E57636C00E98912;
+			remoteInfo = CurrencyTicker;
+		};
+		ED22F5041E5767AD00E98912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED22F4C11E57636C00E98912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED22F4F01E5767AD00E98912;
+			remoteInfo = CurrencyTickerKit;
+		};
+		ED22F51E1E5767BB00E98912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED22F4C11E57636C00E98912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED22F5131E5767BB00E98912;
+			remoteInfo = CurrencyTickeriOS;
+		};
+		ED22F5201E5767BB00E98912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED22F4C11E57636C00E98912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED22F4C81E57636C00E98912;
+			remoteInfo = CurrencyTicker;
+		};
+		ED22F5271E5767BB00E98912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED22F4C11E57636C00E98912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED22F5131E5767BB00E98912;
+			remoteInfo = CurrencyTickeriOS;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED22F50B1E5767AD00E98912 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED22F5071E5767AD00E98912 /* CurrencyTickerKit.framework in Embed Frameworks */,
+				ED22F52A1E5767BB00E98912 /* CurrencyTickeriOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED22F4C91E57636C00E98912 /* CurrencyTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +103,18 @@
 		ED22F4DD1E57636C00E98912 /* CurrencyTickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyTickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F4E11E57636C00E98912 /* CurrencyTickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTickerTests.swift; sourceTree = "<group>"; };
 		ED22F4E31E57636C00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED22F4F11E5767AD00E98912 /* CurrencyTickerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CurrencyTickerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED22F4F31E5767AD00E98912 /* CurrencyTickerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyTickerKit.h; sourceTree = "<group>"; };
+		ED22F4F41E5767AD00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED22F4F91E5767AD00E98912 /* CurrencyTickerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyTickerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED22F5001E5767AD00E98912 /* CurrencyTickerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTickerKitTests.swift; sourceTree = "<group>"; };
+		ED22F5021E5767AD00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CurrencyTickeriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED22F5161E5767BB00E98912 /* CurrencyTickeriOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyTickeriOS.h; sourceTree = "<group>"; };
+		ED22F5171E5767BB00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED22F51C1E5767BB00E98912 /* CurrencyTickeriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyTickeriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED22F5231E5767BB00E98912 /* CurrencyTickeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTickeriOSTests.swift; sourceTree = "<group>"; };
+		ED22F5251E5767BB00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED22F5061E5767AD00E98912 /* CurrencyTickerKit.framework in Frameworks */,
+				ED22F5291E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +131,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F4ED1E5767AD00E98912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F4F61E5767AD00E98912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED22F4FA1E5767AD00E98912 /* CurrencyTickerKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F5101E5767BB00E98912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F5191E5767BB00E98912 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED22F51D1E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +172,10 @@
 			children = (
 				ED22F4CB1E57636C00E98912 /* CurrencyTicker */,
 				ED22F4E01E57636C00E98912 /* CurrencyTickerTests */,
+				ED22F4F21E5767AD00E98912 /* CurrencyTickerKit */,
+				ED22F4FF1E5767AD00E98912 /* CurrencyTickerKitTests */,
+				ED22F5151E5767BB00E98912 /* CurrencyTickeriOS */,
+				ED22F5221E5767BB00E98912 /* CurrencyTickeriOSTests */,
 				ED22F4CA1E57636C00E98912 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +185,10 @@
 			children = (
 				ED22F4C91E57636C00E98912 /* CurrencyTicker.app */,
 				ED22F4DD1E57636C00E98912 /* CurrencyTickerTests.xctest */,
+				ED22F4F11E5767AD00E98912 /* CurrencyTickerKit.framework */,
+				ED22F4F91E5767AD00E98912 /* CurrencyTickerKitTests.xctest */,
+				ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */,
+				ED22F51C1E5767BB00E98912 /* CurrencyTickeriOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +215,62 @@
 			path = CurrencyTickerTests;
 			sourceTree = "<group>";
 		};
+		ED22F4F21E5767AD00E98912 /* CurrencyTickerKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED22F4F31E5767AD00E98912 /* CurrencyTickerKit.h */,
+				ED22F4F41E5767AD00E98912 /* Info.plist */,
+			);
+			path = CurrencyTickerKit;
+			sourceTree = "<group>";
+		};
+		ED22F4FF1E5767AD00E98912 /* CurrencyTickerKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED22F5001E5767AD00E98912 /* CurrencyTickerKitTests.swift */,
+				ED22F5021E5767AD00E98912 /* Info.plist */,
+			);
+			path = CurrencyTickerKitTests;
+			sourceTree = "<group>";
+		};
+		ED22F5151E5767BB00E98912 /* CurrencyTickeriOS */ = {
+			isa = PBXGroup;
+			children = (
+				ED22F5161E5767BB00E98912 /* CurrencyTickeriOS.h */,
+				ED22F5171E5767BB00E98912 /* Info.plist */,
+			);
+			path = CurrencyTickeriOS;
+			sourceTree = "<group>";
+		};
+		ED22F5221E5767BB00E98912 /* CurrencyTickeriOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED22F5231E5767BB00E98912 /* CurrencyTickeriOSTests.swift */,
+				ED22F5251E5767BB00E98912 /* Info.plist */,
+			);
+			path = CurrencyTickeriOSTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ED22F4EE1E5767AD00E98912 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED22F5031E5767AD00E98912 /* CurrencyTickerKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F5111E5767BB00E98912 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED22F5261E5767BB00E98912 /* CurrencyTickeriOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		ED22F4C81E57636C00E98912 /* CurrencyTicker */ = {
@@ -106,10 +280,13 @@
 				ED22F4C51E57636C00E98912 /* Sources */,
 				ED22F4C61E57636C00E98912 /* Frameworks */,
 				ED22F4C71E57636C00E98912 /* Resources */,
+				ED22F50B1E5767AD00E98912 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED22F5051E5767AD00E98912 /* PBXTargetDependency */,
+				ED22F5281E5767BB00E98912 /* PBXTargetDependency */,
 			);
 			name = CurrencyTicker;
 			productName = CurrencyTicker;
@@ -134,6 +311,80 @@
 			productReference = ED22F4DD1E57636C00E98912 /* CurrencyTickerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ED22F4F01E5767AD00E98912 /* CurrencyTickerKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED22F5081E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKit" */;
+			buildPhases = (
+				ED22F4EC1E5767AD00E98912 /* Sources */,
+				ED22F4ED1E5767AD00E98912 /* Frameworks */,
+				ED22F4EE1E5767AD00E98912 /* Headers */,
+				ED22F4EF1E5767AD00E98912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CurrencyTickerKit;
+			productName = CurrencyTickerKit;
+			productReference = ED22F4F11E5767AD00E98912 /* CurrencyTickerKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED22F4F81E5767AD00E98912 /* CurrencyTickerKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED22F50C1E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKitTests" */;
+			buildPhases = (
+				ED22F4F51E5767AD00E98912 /* Sources */,
+				ED22F4F61E5767AD00E98912 /* Frameworks */,
+				ED22F4F71E5767AD00E98912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED22F4FC1E5767AD00E98912 /* PBXTargetDependency */,
+				ED22F4FE1E5767AD00E98912 /* PBXTargetDependency */,
+			);
+			name = CurrencyTickerKitTests;
+			productName = CurrencyTickerKitTests;
+			productReference = ED22F4F91E5767AD00E98912 /* CurrencyTickerKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED22F5131E5767BB00E98912 /* CurrencyTickeriOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED22F52B1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOS" */;
+			buildPhases = (
+				ED22F50F1E5767BB00E98912 /* Sources */,
+				ED22F5101E5767BB00E98912 /* Frameworks */,
+				ED22F5111E5767BB00E98912 /* Headers */,
+				ED22F5121E5767BB00E98912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CurrencyTickeriOS;
+			productName = CurrencyTickeriOS;
+			productReference = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED22F51B1E5767BB00E98912 /* CurrencyTickeriOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED22F52E1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOSTests" */;
+			buildPhases = (
+				ED22F5181E5767BB00E98912 /* Sources */,
+				ED22F5191E5767BB00E98912 /* Frameworks */,
+				ED22F51A1E5767BB00E98912 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED22F51F1E5767BB00E98912 /* PBXTargetDependency */,
+				ED22F5211E5767BB00E98912 /* PBXTargetDependency */,
+			);
+			name = CurrencyTickeriOSTests;
+			productName = CurrencyTickeriOSTests;
+			productReference = ED22F51C1E5767BB00E98912 /* CurrencyTickeriOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +401,28 @@
 						ProvisioningStyle = Automatic;
 					};
 					ED22F4DC1E57636C00E98912 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED22F4C81E57636C00E98912;
+					};
+					ED22F4F01E5767AD00E98912 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+					};
+					ED22F4F81E5767AD00E98912 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED22F4C81E57636C00E98912;
+					};
+					ED22F5131E5767BB00E98912 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EWQZR3J8HN;
+						ProvisioningStyle = Automatic;
+					};
+					ED22F51B1E5767BB00E98912 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EWQZR3J8HN;
 						ProvisioningStyle = Automatic;
@@ -172,6 +445,10 @@
 			targets = (
 				ED22F4C81E57636C00E98912 /* CurrencyTicker */,
 				ED22F4DC1E57636C00E98912 /* CurrencyTickerTests */,
+				ED22F4F01E5767AD00E98912 /* CurrencyTickerKit */,
+				ED22F4F81E5767AD00E98912 /* CurrencyTickerKitTests */,
+				ED22F5131E5767BB00E98912 /* CurrencyTickeriOS */,
+				ED22F51B1E5767BB00E98912 /* CurrencyTickeriOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +465,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ED22F4DB1E57636C00E98912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F4EF1E5767AD00E98912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F4F71E5767AD00E98912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F5121E5767BB00E98912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F51A1E5767BB00E98912 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,6 +519,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED22F4EC1E5767AD00E98912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F4F51E5767AD00E98912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED22F5011E5767AD00E98912 /* CurrencyTickerKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F50F1E5767BB00E98912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED22F5181E5767BB00E98912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED22F5241E5767BB00E98912 /* CurrencyTickeriOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -221,6 +556,36 @@
 			isa = PBXTargetDependency;
 			target = ED22F4C81E57636C00E98912 /* CurrencyTicker */;
 			targetProxy = ED22F4DE1E57636C00E98912 /* PBXContainerItemProxy */;
+		};
+		ED22F4FC1E5767AD00E98912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED22F4F01E5767AD00E98912 /* CurrencyTickerKit */;
+			targetProxy = ED22F4FB1E5767AD00E98912 /* PBXContainerItemProxy */;
+		};
+		ED22F4FE1E5767AD00E98912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED22F4C81E57636C00E98912 /* CurrencyTicker */;
+			targetProxy = ED22F4FD1E5767AD00E98912 /* PBXContainerItemProxy */;
+		};
+		ED22F5051E5767AD00E98912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED22F4F01E5767AD00E98912 /* CurrencyTickerKit */;
+			targetProxy = ED22F5041E5767AD00E98912 /* PBXContainerItemProxy */;
+		};
+		ED22F51F1E5767BB00E98912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED22F5131E5767BB00E98912 /* CurrencyTickeriOS */;
+			targetProxy = ED22F51E1E5767BB00E98912 /* PBXContainerItemProxy */;
+		};
+		ED22F5211E5767BB00E98912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED22F4C81E57636C00E98912 /* CurrencyTicker */;
+			targetProxy = ED22F5201E5767BB00E98912 /* PBXContainerItemProxy */;
+		};
+		ED22F5281E5767BB00E98912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED22F5131E5767BB00E98912 /* CurrencyTickeriOS */;
+			targetProxy = ED22F5271E5767BB00E98912 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -393,6 +758,150 @@
 			};
 			name = Release;
 		};
+		ED22F5091E5767AD00E98912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CurrencyTickerKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED22F50A1E5767AD00E98912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CurrencyTickerKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickerKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED22F50D1E5767AD00E98912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = CurrencyTickerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyTicker.app/CurrencyTicker";
+			};
+			name = Debug;
+		};
+		ED22F50E1E5767AD00E98912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = CurrencyTickerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyTicker.app/CurrencyTicker";
+			};
+			name = Release;
+		};
+		ED22F52C1E5767BB00E98912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CurrencyTickeriOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickeriOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED22F52D1E5767BB00E98912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CurrencyTickeriOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickeriOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED22F52F1E5767BB00E98912 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = CurrencyTickeriOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickeriOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyTicker.app/CurrencyTicker";
+			};
+			name = Debug;
+		};
+		ED22F5301E5767BB00E98912 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = EWQZR3J8HN;
+				INFOPLIST_FILE = CurrencyTickeriOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickeriOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyTicker.app/CurrencyTicker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -418,6 +927,38 @@
 			buildConfigurations = (
 				ED22F4EA1E57636C00E98912 /* Debug */,
 				ED22F4EB1E57636C00E98912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED22F5081E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED22F5091E5767AD00E98912 /* Debug */,
+				ED22F50A1E5767AD00E98912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED22F50C1E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED22F50D1E5767AD00E98912 /* Debug */,
+				ED22F50E1E5767AD00E98912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED22F52B1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED22F52C1E5767BB00E98912 /* Debug */,
+				ED22F52D1E5767BB00E98912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED22F52E1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED22F52F1E5767BB00E98912 /* Debug */,
+				ED22F5301E5767BB00E98912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

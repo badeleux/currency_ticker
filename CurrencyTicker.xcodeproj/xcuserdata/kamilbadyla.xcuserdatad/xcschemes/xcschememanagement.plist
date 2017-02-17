@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>CurrencyTickerKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>CurrencyTickeriOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,26 @@
 			<true/>
 		</dict>
 		<key>ED22F4DC1E57636C00E98912</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED22F4F01E5767AD00E98912</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED22F4F81E5767AD00E98912</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED22F5131E5767BB00E98912</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED22F51B1E5767BB00E98912</key>
 		<dict>
 			<key>primary</key>
 			<true/>
