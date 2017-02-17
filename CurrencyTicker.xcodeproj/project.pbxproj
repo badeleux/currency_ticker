@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		206BD4606614E999CF2958D9 /* Pods_CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */; };
+		66491E240220DC7393784106 /* Pods_CurrencyTickerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5121658B7C693461887CA6B /* Pods_CurrencyTickerKit.framework */; };
+		B8BA370047EA28D6537F6200 /* Pods_CurrencyTicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABC2D405389120F5CFB7520 /* Pods_CurrencyTicker.framework */; };
 		ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CC1E57636C00E98912 /* AppDelegate.swift */; };
 		ED22F4CF1E57636C00E98912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CE1E57636C00E98912 /* ViewController.swift */; };
 		ED22F4D21E57636C00E98912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D01E57636C00E98912 /* Main.storyboard */; };
@@ -23,6 +26,7 @@
 		ED22F5261E5767BB00E98912 /* CurrencyTickeriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ED22F5161E5767BB00E98912 /* CurrencyTickeriOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED22F5291E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; };
 		ED22F52A1E5767BB00E98912 /* CurrencyTickeriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED22F5321E5768F200E98912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ED22F5311E5768F200E98912 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0ABC2D405389120F5CFB7520 /* Pods_CurrencyTicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		182C5605FE481F2F4EE0B128 /* Pods-CurrencyTickeriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickeriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS.debug.xcconfig"; sourceTree = "<group>"; };
+		195CC72906E70846232D04D4 /* Pods-CurrencyTickeriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickeriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS.release.xcconfig"; sourceTree = "<group>"; };
+		27D29D0BDBC3E629DD611CCF /* Pods-CurrencyTickerKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKit/Pods-CurrencyTickerKit.debug.xcconfig"; sourceTree = "<group>"; };
+		4BC213EA2C44012B52D83B7C /* Pods-CurrencyTicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTicker/Pods-CurrencyTicker.release.xcconfig"; sourceTree = "<group>"; };
+		A03973A78B26BF2D3C3B8593 /* Pods-CurrencyTicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTicker/Pods-CurrencyTicker.debug.xcconfig"; sourceTree = "<group>"; };
+		A5121658B7C693461887CA6B /* Pods_CurrencyTickerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59C517FA44BAA1B1114A13B /* Pods-CurrencyTickerKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKit/Pods-CurrencyTickerKit.release.xcconfig"; sourceTree = "<group>"; };
 		ED22F4C91E57636C00E98912 /* CurrencyTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F4CC1E57636C00E98912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED22F4CE1E57636C00E98912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +127,8 @@
 		ED22F51C1E5767BB00E98912 /* CurrencyTickeriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyTickeriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F5231E5767BB00E98912 /* CurrencyTickeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTickeriOSTests.swift; sourceTree = "<group>"; };
 		ED22F5251E5767BB00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED22F5311E5768F200E98912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickeriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +138,7 @@
 			files = (
 				ED22F5061E5767AD00E98912 /* CurrencyTickerKit.framework in Frameworks */,
 				ED22F5291E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */,
+				B8BA370047EA28D6537F6200 /* Pods_CurrencyTicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66491E240220DC7393784106 /* Pods_CurrencyTickerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206BD4606614E999CF2958D9 /* Pods_CurrencyTickeriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,9 +184,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D64BCCE59CC4277F112B11D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A03973A78B26BF2D3C3B8593 /* Pods-CurrencyTicker.debug.xcconfig */,
+				4BC213EA2C44012B52D83B7C /* Pods-CurrencyTicker.release.xcconfig */,
+				27D29D0BDBC3E629DD611CCF /* Pods-CurrencyTickerKit.debug.xcconfig */,
+				B59C517FA44BAA1B1114A13B /* Pods-CurrencyTickerKit.release.xcconfig */,
+				182C5605FE481F2F4EE0B128 /* Pods-CurrencyTickeriOS.debug.xcconfig */,
+				195CC72906E70846232D04D4 /* Pods-CurrencyTickeriOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D561079059FAA83B7719D0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0ABC2D405389120F5CFB7520 /* Pods_CurrencyTicker.framework */,
+				A5121658B7C693461887CA6B /* Pods_CurrencyTickerKit.framework */,
+				FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED22F4C01E57636C00E98912 = {
 			isa = PBXGroup;
 			children = (
+				ED22F5311E5768F200E98912 /* Podfile */,
 				ED22F4CB1E57636C00E98912 /* CurrencyTicker */,
 				ED22F4E01E57636C00E98912 /* CurrencyTickerTests */,
 				ED22F4F21E5767AD00E98912 /* CurrencyTickerKit */,
@@ -177,6 +218,8 @@
 				ED22F5151E5767BB00E98912 /* CurrencyTickeriOS */,
 				ED22F5221E5767BB00E98912 /* CurrencyTickeriOSTests */,
 				ED22F4CA1E57636C00E98912 /* Products */,
+				6D64BCCE59CC4277F112B11D /* Pods */,
+				9D561079059FAA83B7719D0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -277,10 +320,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED22F4E61E57636C00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTicker" */;
 			buildPhases = (
+				0B2F3225715353DF7B1D0A93 /* [CP] Check Pods Manifest.lock */,
 				ED22F4C51E57636C00E98912 /* Sources */,
 				ED22F4C61E57636C00E98912 /* Frameworks */,
 				ED22F4C71E57636C00E98912 /* Resources */,
 				ED22F50B1E5767AD00E98912 /* Embed Frameworks */,
+				3C247FC3A00F17B31FC41D1F /* [CP] Embed Pods Frameworks */,
+				57C635B9B5A26BE419032BC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,10 +361,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED22F5081E5767AD00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickerKit" */;
 			buildPhases = (
+				B3937D8CCF9A56956296DA26 /* [CP] Check Pods Manifest.lock */,
 				ED22F4EC1E5767AD00E98912 /* Sources */,
 				ED22F4ED1E5767AD00E98912 /* Frameworks */,
 				ED22F4EE1E5767AD00E98912 /* Headers */,
 				ED22F4EF1E5767AD00E98912 /* Resources */,
+				364CB057A3F65F6B9529A9A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,10 +400,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED22F52B1E5767BB00E98912 /* Build configuration list for PBXNativeTarget "CurrencyTickeriOS" */;
 			buildPhases = (
+				69851A7077BA1174C8C8A438 /* [CP] Check Pods Manifest.lock */,
 				ED22F50F1E5767BB00E98912 /* Sources */,
 				ED22F5101E5767BB00E98912 /* Frameworks */,
 				ED22F5111E5767BB00E98912 /* Headers */,
 				ED22F5121E5767BB00E98912 /* Resources */,
+				C653499BEEE3B080A7F2D9F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -460,6 +510,7 @@
 			files = (
 				ED22F4D71E57636C00E98912 /* LaunchScreen.storyboard in Resources */,
 				ED22F4D41E57636C00E98912 /* Assets.xcassets in Resources */,
+				ED22F5321E5768F200E98912 /* Podfile in Resources */,
 				ED22F4D21E57636C00E98912 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +551,114 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B2F3225715353DF7B1D0A93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		364CB057A3F65F6B9529A9A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTickerKit/Pods-CurrencyTickerKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C247FC3A00F17B31FC41D1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTicker/Pods-CurrencyTicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57C635B9B5A26BE419032BC2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTicker/Pods-CurrencyTicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69851A7077BA1174C8C8A438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3937D8CCF9A56956296DA26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C653499BEEE3B080A7F2D9F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED22F4C51E57636C00E98912 /* Sources */ = {
@@ -704,6 +863,7 @@
 		};
 		ED22F4E71E57636C00E98912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A03973A78B26BF2D3C3B8593 /* Pods-CurrencyTicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EWQZR3J8HN;
@@ -717,6 +877,7 @@
 		};
 		ED22F4E81E57636C00E98912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BC213EA2C44012B52D83B7C /* Pods-CurrencyTicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EWQZR3J8HN;
@@ -760,6 +921,7 @@
 		};
 		ED22F5091E5767AD00E98912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27D29D0BDBC3E629DD611CCF /* Pods-CurrencyTickerKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -782,6 +944,7 @@
 		};
 		ED22F50A1E5767AD00E98912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B59C517FA44BAA1B1114A13B /* Pods-CurrencyTickerKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -832,6 +995,7 @@
 		};
 		ED22F52C1E5767BB00E98912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182C5605FE481F2F4EE0B128 /* Pods-CurrencyTickeriOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -854,6 +1018,7 @@
 		};
 		ED22F52D1E5767BB00E98912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 195CC72906E70846232D04D4 /* Pods-CurrencyTickeriOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;

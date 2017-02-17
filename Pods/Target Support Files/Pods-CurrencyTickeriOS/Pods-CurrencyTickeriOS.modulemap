@@ -1,0 +1,6 @@
+framework module Pods_CurrencyTickeriOS {
+  umbrella header "Pods-CurrencyTickeriOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
