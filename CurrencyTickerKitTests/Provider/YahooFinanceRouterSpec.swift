@@ -6,11 +6,11 @@ class YahooFinanceRouterSpec: QuickSpec {
     override func spec() {
         describe("APIStringRepresentable") {
             it("CurrencySymbol -> String", closure: {
-                expect(YahooCurrencySymbol(currency: "USD").apiStringRepresentation()).to(equal("USD=X"))
+                expect(YahooCurrencySymbol(currency: "USD").apiStringQueryRepresentation()).to(equal("USD=X"))
             })
             
             it("CurrencyPair -> String", closure: {
-                expect(YahooUSDCurrencyPair(to: "EUR").apiStringRepresentation()).to(equal("USDEUR"))
+                expect(YahooUSDCurrencyPair(to: "EUR").apiStringQueryRepresentation()).to(equal("USDEUR"))
             })
         }
     }

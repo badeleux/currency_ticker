@@ -11,9 +11,13 @@ import Argo
 import Curry
 import Runes
 
+// MARK: - Constants
+
 struct YahooConstants {
     static let USD = "USD"
 }
+
+// MARK: - YahooCurrencySymbol
 
 struct YahooCurrencySymbol: APIStringQueryRepresentable {
     let currency: Currency
@@ -48,6 +52,35 @@ extension YahooCurrencySymbol: Decodable {
     }
 }
 
+// MARK: - YahooCurrencyName
+
+struct YahooCurrencyName {
+    let name: String
+    
+    public var currencies: Set<Currency> {
+        let components = name.components(separatedBy: "/")
+        if components.count == 2 {
+            return Set(components)
+        }
+        else {
+            return Set()
+        }
+    }
+}
+
+extension YahooCurrencyName: Decodable {
+    static func decode(_ json: JSON) -> Decoded<YahooCurrencyName> {
+        switch json {
+        case let .string(s):
+            return .success(YahooCurrencyName(name: s))
+        default:
+            return .failure(DecodeError.typeMismatch(expected: "String", actual: json.description))
+        }
+    }
+}
+
+// MARK: - YahooCurrencyPair
+
 protocol YahooCurrencyPairable {
     var from: Currency { get }
     var to: Currency { get }
@@ -77,22 +110,14 @@ struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable 
     let to: Currency
 }
 
+// MARK: - YahooCurrency
 
 struct YahooCurrency {
     let symbol: YahooCurrencySymbol?
-    let name: String?
+    let name: YahooCurrencyName?
     
     static func mockedJSON() -> Data? {
         return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_list", withExtension: "json")!)
-    }
-    
-    public var currencies: Set<Currency> {
-        if let components = name?.components(separatedBy: "/"), components.count == 2 {
-            return Set(components)
-        }
-        else {
-            return Set()
-        }
     }
 }
 
@@ -101,5 +126,32 @@ extension YahooCurrency: Decodable {
         return curry(YahooCurrency.init)
             <^> json <|? ["resource", "fields", "symbol"]
             <*> json <|? ["resource", "fields", "name"]
+    }
+}
+
+// MARK: - YahooCurrencyExchangeRate
+
+struct YahooCurrencyExchanceRate {
+    let name: YahooCurrencyName
+    let rate: Float
+    let date: Date?
+    let ask: Float
+    let bid: Float
+}
+
+extension YahooCurrencyExchanceRate: Decodable {
+    
+    
+    static func decode(_ json: JSON) -> Decoded<YahooCurrencyExchanceRate> {
+        let a = curry(YahooCurrencyExchanceRate.init)
+            <^> json <| "Name"
+            <*> (json <| "Rate" >>- YahooNumberDecoders.toFloat)
+            <*> YahooDateDecoders.decodeExchangeRateDate(json)
+        return a <*> (json <| "Ask" >>- YahooNumberDecoders.toFloat)
+            <*> (json <| "Bid" >>- YahooNumberDecoders.toFloat)
+    }
+    
+    static func mockedJSON() -> Data? {
+        return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_exchange", withExtension: "json")!)
     }
 }

@@ -13,5 +13,5 @@ extension DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-dd"
         return formatter
-    }
+    }    
 }

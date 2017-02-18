@@ -16,13 +16,26 @@ class YahooCurrencySpec: QuickSpec {
             })
         }
         
-        describe("YahooCurrency extract currencies") {
-            let usdjpy = YahooCurrency(symbol: nil, name: "USD/JPY")
+        describe("YahooExchange json decoder") {
+            it("should decode mock data", closure: {
+                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooCurrencyExchanceRate.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
+                
+                let rate: Decoded<YahooCurrencyExchanceRate> = (JSON(json) <| ["query", "results", "rate"])
+                expect(rate.value).toNot(beNil())
+                expect(rate.value!.ask).to(beGreaterThan(0))
+                expect(rate.value!.rate).to(beGreaterThan(0))
+                expect(rate.value!.bid).to(beGreaterThan(0))
+                expect(rate.value!.date).toNot(beNil())
+            })
+        }
+        
+        describe("YahooCurrencyName extract currencies") {
+            let usdjpy = YahooCurrencyName(name: "USD/JPY")
             it("usdjpy should return USD and JPY", closure: { 
                 expect(usdjpy.currencies).to(contain("USD", "JPY"))
             })
             
-            let gold = YahooCurrency(symbol: nil, name: "PALLOTINUM 1 OZ")
+            let gold = YahooCurrencyName(name: "PALLOTINUM 1 OZ")
             it("gold should return no currencies", closure: {
                 expect(gold.currencies).to(beEmpty())
             })
