@@ -9,13 +9,13 @@
 import Foundation
 import Moya
 
-typealias Currency = String
+public typealias Currency = String
 
 protocol APIStringQueryRepresentable {
     func apiStringQueryRepresentation() -> String
 }
 
-enum YahooFinanceRouter {
+public enum YahooFinanceRouter {
     case currencyList
     case exchangeRate(pair: YahooCurrencyPairable)
     case historicalData(symbol: YahooCurrencySymbol, dateStart: Date, dateEnd: Date)
@@ -34,11 +34,11 @@ extension YahooFinanceRouter: TargetType {
         }
     }
     
-    var task: Task {
+    public var task: Task {
         return .request
     }
 
-    var baseURL: URL {
+    public var baseURL: URL {
         switch self {
         case .historicalData, .exchangeRate:
             return URL(string: "https://query.yahooapis.com/")!
@@ -47,7 +47,7 @@ extension YahooFinanceRouter: TargetType {
         }
     }
     
-    var path: String {
+    public var path: String {
         switch self {
         case .historicalData, .exchangeRate:
             return "/v1/public/yql"
@@ -56,11 +56,11 @@ extension YahooFinanceRouter: TargetType {
         }
     }
     
-    var method: Moya.Method {
+    public var method: Moya.Method {
         return .get
     }
     
-    var parameters: [String : Any]? {
+    public var parameters: [String : Any]? {
         switch self {
         case let .historicalData(symbol, dateStart, dateEnd):
             let startDateString = DateFormatter.yahooDateOnly().string(from: dateStart)
@@ -73,7 +73,7 @@ extension YahooFinanceRouter: TargetType {
         }
     }
     
-    var parameterEncoding: ParameterEncoding {
+    public var parameterEncoding: ParameterEncoding {
         return URLEncoding.default
     }
     
