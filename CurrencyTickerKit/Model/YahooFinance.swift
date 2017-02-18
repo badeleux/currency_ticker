@@ -85,6 +85,15 @@ struct YahooCurrency {
     static func mockedJSON() -> Data? {
         return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_list", withExtension: "json")!)
     }
+    
+    public var currencies: Set<Currency> {
+        if let components = name?.components(separatedBy: "/"), components.count == 2 {
+            return Set(components)
+        }
+        else {
+            return Set()
+        }
+    }
 }
 
 extension YahooCurrency: Decodable {
