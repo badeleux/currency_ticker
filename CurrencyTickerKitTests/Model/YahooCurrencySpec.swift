@@ -33,13 +33,14 @@ class YahooCurrencySpec: QuickSpec {
             it("should decode mock data", closure: {
                 let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooSymbolHistoricalData.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
                 
-                let rate: Decoded<YahooSymbolHistoricalData> = (JSON(json) <| ["query", "results", "quote"])
+                let rate: Decoded<[YahooSymbolHistoricalData]> = (JSON(json) <|| ["query", "results", "quote"])
                 expect(rate.value).toNot(beNil())
-                expect(rate.value!.high).to(beGreaterThan(0))
-                expect(rate.value!.close).to(beGreaterThan(0))
-                expect(rate.value!.low).to(beGreaterThan(0))
-                expect(rate.value!.open).to(beGreaterThan(0))
-                expect(rate.value!.date).toNot(beNil())
+                expect(rate.value).to(haveCount(2))
+                expect(rate.value!.first!.high).to(beGreaterThan(0))
+                expect(rate.value!.first!.close).to(beGreaterThan(0))
+                expect(rate.value!.first!.low).to(beGreaterThan(0))
+                expect(rate.value!.first!.open).to(beGreaterThan(0))
+                expect(rate.value!.first!.date).toNot(beNil())
             })
         }
         
