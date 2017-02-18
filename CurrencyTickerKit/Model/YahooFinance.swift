@@ -40,7 +40,8 @@ extension YahooCurrencySymbol: Decodable {
     static func decode(_ json: JSON) -> Decoded<YahooCurrencySymbol> {
         switch json {
         case let JSON.string(s):
-            if let symbol = YahooCurrencySymbol.create(rawSymbol: s) {
+            if let rawSymbol = s.removingPercentEncoding,
+                let symbol = YahooCurrencySymbol.create(rawSymbol: rawSymbol) {
                 return .success(symbol)
             }
             else {
@@ -153,5 +154,32 @@ extension YahooCurrencyExchanceRate: Decodable {
     
     static func mockedJSON() -> Data? {
         return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_exchange", withExtension: "json")!)
+    }
+}
+
+// MARK: - YahooSymbolHistoricalData
+
+struct YahooSymbolHistoricalData {
+    let symbol: YahooCurrencySymbol
+    let date: Date
+    let open: Float
+    let high: Float
+    let low: Float
+    let close: Float
+}
+
+extension YahooSymbolHistoricalData: Decodable {
+    static func decode(_ json: JSON) -> Decoded<YahooSymbolHistoricalData> {
+        return curry(YahooSymbolHistoricalData.init)
+            <^> json <| "Symbol"
+            <*> (json <| "Date" >>- YahooDateDecoders.toYahooDateOnly)
+            <*> (json <| "Open" >>- YahooNumberDecoders.toFloat)
+            <*> (json <| "High" >>- YahooNumberDecoders.toFloat)
+            <*> (json <| "Low" >>- YahooNumberDecoders.toFloat)
+            <*> (json <| "Close" >>- YahooNumberDecoders.toFloat)
+    }
+    
+    static func mockedJSON() -> Data? {
+        return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_historical_data", withExtension: "json")!)
     }
 }

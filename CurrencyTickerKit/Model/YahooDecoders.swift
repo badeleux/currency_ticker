@@ -35,6 +35,10 @@ struct YahooDateDecoders {
         }
         return nil
     }
+    
+    static func toYahooDateOnly(_ rawDate: String) -> Decoded<Date> {
+        return .fromOptional(DateFormatter.yahooDateOnly().date(from: rawDate))
+    }
 }
 
 struct YahooNumberDecoders {

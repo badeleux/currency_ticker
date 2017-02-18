@@ -29,6 +29,20 @@ class YahooCurrencySpec: QuickSpec {
             })
         }
         
+        describe("YahooSymbolHistoricalData json decoder") {
+            it("should decode mock data", closure: {
+                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooSymbolHistoricalData.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
+                
+                let rate: Decoded<YahooSymbolHistoricalData> = (JSON(json) <| ["query", "results", "quote"])
+                expect(rate.value).toNot(beNil())
+                expect(rate.value!.high).to(beGreaterThan(0))
+                expect(rate.value!.close).to(beGreaterThan(0))
+                expect(rate.value!.low).to(beGreaterThan(0))
+                expect(rate.value!.open).to(beGreaterThan(0))
+                expect(rate.value!.date).toNot(beNil())
+            })
+        }
+        
         describe("YahooCurrencyName extract currencies") {
             let usdjpy = YahooCurrencyName(name: "USD/JPY")
             it("usdjpy should return USD and JPY", closure: { 

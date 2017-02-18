@@ -39,6 +39,7 @@
 		EDE295251E584C7E00BF4F7A /* YahooDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */; };
 		EDE295271E5850F500BF4F7A /* YahooDecodersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295261E5850F500BF4F7A /* YahooDecodersSpec.swift */; };
 		EDE295291E585E6200BF4F7A /* currency_exchange.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE295281E585E6200BF4F7A /* currency_exchange.json */; };
+		EDE2952B1E58675400BF4F7A /* currency_historical_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EDE2952A1E58675400BF4F7A /* currency_historical_data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooDecoders.swift; sourceTree = "<group>"; };
 		EDE295261E5850F500BF4F7A /* YahooDecodersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooDecodersSpec.swift; sourceTree = "<group>"; };
 		EDE295281E585E6200BF4F7A /* currency_exchange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency_exchange.json; sourceTree = "<group>"; };
+		EDE2952A1E58675400BF4F7A /* currency_historical_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency_historical_data.json; sourceTree = "<group>"; };
 		F4CB033F4B55AAF1AD0D6305 /* Pods_CurrencyTickerKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickerKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF164ACB3BCB9D01D5A0E953 /* Pods_CurrencyTickeriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTickeriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -387,6 +389,7 @@
 			children = (
 				ED88EF341E57B2310088B0C0 /* currency_list.json */,
 				EDE295281E585E6200BF4F7A /* currency_exchange.json */,
+				EDE2952A1E58675400BF4F7A /* currency_historical_data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE2952B1E58675400BF4F7A /* currency_historical_data.json in Resources */,
 				ED88EF351E57B2310088B0C0 /* currency_list.json in Resources */,
 				EDE295291E585E6200BF4F7A /* currency_exchange.json in Resources */,
 			);
