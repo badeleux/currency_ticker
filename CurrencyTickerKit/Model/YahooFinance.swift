@@ -116,10 +116,6 @@ public struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryReprese
 public struct YahooCurrency {
     public let symbol: YahooCurrencySymbol?
     public let name: YahooCurrencyName?
-    
-    public static func mockedJSON() -> Data? {
-        return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_list", withExtension: "json")!)
-    }
 }
 
 extension YahooCurrency: Decodable {
@@ -149,10 +145,6 @@ extension YahooCurrencyExchanceRate: Decodable {
             <*> YahooDateDecoders.decodeExchangeRateDate(json)
         return a <*> (json <| "Ask" >>- YahooNumberDecoders.toFloat)
             <*> (json <| "Bid" >>- YahooNumberDecoders.toFloat)
-    }
-    
-    public static func mockedJSON() -> Data? {
-        return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_exchange", withExtension: "json")!)
     }
 }
 

@@ -26,9 +26,9 @@ extension YahooFinanceRouter: TargetType {
     public var sampleData: Data {
         switch self {
         case .currencyList:
-            return YahooCurrency.mockedJSON() ?? Data()
+            return YahooCurrencyList.mockedJSON() ?? Data()
         case .exchangeRate:
-            return YahooCurrencyExchanceRate.mockedJSON() ?? Data()
+            return YahooCurrencyExchangeQueryResult.mockedJSON() ?? Data()
         case .historicalData:
             return YahooSymbolHistoricalData.mockedJSON() ?? Data()
         }

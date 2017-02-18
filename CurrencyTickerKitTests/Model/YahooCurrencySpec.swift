@@ -8,39 +8,39 @@ class YahooCurrencySpec: QuickSpec {
     override func spec() {
         describe("YahooCurrency json decoder") { 
             it("should decode mock data", closure: { 
-                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooCurrency.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
+                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooCurrencyList.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
                 
-                let currencies: Decoded<[YahooCurrency]> = (JSON(json) <|| ["list", "resources"])
+                let currencies: Decoded<YahooCurrencyList> = JSON(json) <| "list"
                 expect(currencies.value).toNot(beNil())
-                expect(currencies.value).to(haveCount(188))
+                expect(currencies.value?.currencies).to(haveCount(188))
             })
         }
         
         describe("YahooExchange json decoder") {
             it("should decode mock data", closure: {
-                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooCurrencyExchanceRate.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
+                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooCurrencyExchangeQueryResult.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
                 
-                let rate: Decoded<YahooCurrencyExchanceRate> = (JSON(json) <| ["query", "results", "rate"])
+                let rate: Decoded<YahooCurrencyExchangeQueryResult> = JSON(json) <| "query"
                 expect(rate.value).toNot(beNil())
-                expect(rate.value!.ask).to(beGreaterThan(0))
-                expect(rate.value!.rate).to(beGreaterThan(0))
-                expect(rate.value!.bid).to(beGreaterThan(0))
-                expect(rate.value!.date).toNot(beNil())
+                expect(rate.value!.rate.ask).to(beGreaterThan(0))
+                expect(rate.value!.rate.rate).to(beGreaterThan(0))
+                expect(rate.value!.rate.bid).to(beGreaterThan(0))
+                expect(rate.value!.rate.date).toNot(beNil())
             })
         }
         
         describe("YahooSymbolHistoricalData json decoder") {
             it("should decode mock data", closure: {
-                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooSymbolHistoricalData.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
+                let json: [String : Any] = try! JSONSerialization.jsonObject(with: YahooSymbolHistoricalDataQueryResult.mockedJSON()!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
                 
-                let rate: Decoded<[YahooSymbolHistoricalData]> = (JSON(json) <|| ["query", "results", "quote"])
+                let rate: Decoded<YahooSymbolHistoricalDataQueryResult> = JSON(json) <| "query"
                 expect(rate.value).toNot(beNil())
-                expect(rate.value).to(haveCount(2))
-                expect(rate.value!.first!.high).to(beGreaterThan(0))
-                expect(rate.value!.first!.close).to(beGreaterThan(0))
-                expect(rate.value!.first!.low).to(beGreaterThan(0))
-                expect(rate.value!.first!.open).to(beGreaterThan(0))
-                expect(rate.value!.first!.date).toNot(beNil())
+                expect(rate.value?.data).to(haveCount(2))
+                expect(rate.value!.data.first!.high).to(beGreaterThan(0))
+                expect(rate.value!.data.first!.close).to(beGreaterThan(0))
+                expect(rate.value!.data.first!.low).to(beGreaterThan(0))
+                expect(rate.value!.data.first!.open).to(beGreaterThan(0))
+                expect(rate.value!.data.first!.date).toNot(beNil())
             })
         }
         
