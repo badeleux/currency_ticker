@@ -15,10 +15,10 @@ struct YahooConstants {
     static let USD = "USD"
 }
 
-struct YahooCurrencySymbol: APIStringRepresentable {
+struct YahooCurrencySymbol: APIStringQueryRepresentable {
     let currency: Currency
     
-    func apiStringRepresentation() -> String {
+    func apiStringQueryRepresentation() -> String {
         return self.currency + "=X"
     }
 }
@@ -54,7 +54,7 @@ protocol YahooCurrencyPairable {
 }
 
 extension YahooCurrencyPairable {
-    func apiStringRepresentation() -> String {
+    func apiStringQueryRepresentation() -> String {
         return from + to
     }
     
@@ -67,12 +67,12 @@ extension YahooCurrencyPairable {
     }
 }
 
-struct YahooCurrencyPair: YahooCurrencyPairable, APIStringRepresentable {
+struct YahooCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
     let from: Currency
     let to: Currency
 }
 
-struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringRepresentable {
+struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
     let from: Currency = YahooConstants.USD
     let to: Currency
 }

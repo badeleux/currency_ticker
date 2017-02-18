@@ -11,8 +11,8 @@ import Moya
 
 typealias Currency = String
 
-protocol APIStringRepresentable {
-    func apiStringRepresentation() -> String
+protocol APIStringQueryRepresentable {
+    func apiStringQueryRepresentation() -> String
 }
 
 enum YahooFinanceRouter {
@@ -63,9 +63,9 @@ extension YahooFinanceRouter: TargetType {
         case let .historicalData(symbol, dateStart, dateEnd):
             let startDateString = DateFormatter.yahooDateOnly().string(from: dateStart)
             let endDateString = DateFormatter.yahooDateOnly().string(from: dateEnd)
-            return ["q" : "SELECT * FROM yahoo.finance.historicaldata WHERE symbol = \"\(symbol.apiStringRepresentation())\" AND startDate = \"\(startDateString)\" AND endDate = \"\(endDateString)\""]
+            return ["q" : "SELECT * FROM yahoo.finance.historicaldata WHERE symbol = \"\(symbol.apiStringQueryRepresentation())\" AND startDate = \"\(startDateString)\" AND endDate = \"\(endDateString)\""]
         case let .exchangeRate(pair):
-            return ["q" : "select * from yahoo.finance.xchange where pair in (\"\(pair.apiStringRepresentation())\")"]
+            return ["q" : "select * from yahoo.finance.xchange where pair in (\"\(pair.apiStringQueryRepresentation())\")"]
         case .currencyList:
             return ["format" : "json"]
         }
