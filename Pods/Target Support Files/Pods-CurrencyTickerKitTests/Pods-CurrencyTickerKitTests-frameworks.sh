@@ -98,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Curry/Curry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Moya/Moya.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Moya-Argo/Moya_Argo.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Ogra/Ogra.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Runes/Runes.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftDate/SwiftDate.framework"
 fi
@@ -111,6 +112,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Curry/Curry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Moya/Moya.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Moya-Argo/Moya_Argo.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Ogra/Ogra.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Runes/Runes.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftDate/SwiftDate.framework"
 fi

@@ -23,6 +23,8 @@ PODS:
     - Moya/Core
     - ReactiveSwift (~> 1.0)
   - Nimble (6.0.1)
+  - Ogra (4.1.1):
+    - Argo (~> 4.1.1)
   - Quick (1.0.0)
   - ReactiveCocoa (5.0.0):
     - ReactiveSwift (~> 1.0.0)
@@ -42,6 +44,7 @@ DEPENDENCIES:
   - FoldingCell
   - Moya-Argo/ReactiveCocoa
   - Nimble
+  - Ogra
   - Quick
   - ReactiveCocoa
   - ReactiveSwift
@@ -59,6 +62,7 @@ SPEC CHECKSUMS:
   Moya: 47f61da5b634aa71f676431b64ee0f81e976296d
   Moya-Argo: ae9a8c7d10e0ab052b22f215d1fe540d31bb32d3
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  Ogra: dd1258f9aa218b8c120ec7ddb5916224a8dc83d9
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
   ReactiveCocoa: 60ef0da915b4f70c34ebecc3f4fb8f96af0e53d6
   ReactiveSwift: f391724ee318a2cfd3e37dfb041cd49ecf4e7869
@@ -68,6 +72,6 @@ SPEC CHECKSUMS:
   SwiftDate: 9a50045abc7b3515ede0fbed94705907279177b5
   SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
 
-PODFILE CHECKSUM: bd622092361831a6747dc0cf7a824444bf047000
+PODFILE CHECKSUM: adae8499ec57c7b8b9f366bd033c271b722f6747
 
 COCOAPODS: 1.2.0

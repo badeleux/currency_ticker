@@ -15,6 +15,7 @@ target 'CurrencyTickerKit' do
     pod 'Moya-Argo/ReactiveCocoa'
     pod 'Curry'
     pod 'SwiftDate', '~> 4.0'
+    pod 'Ogra'
     
     target 'CurrencyTickerKitTests' do
         inherit! :search_paths

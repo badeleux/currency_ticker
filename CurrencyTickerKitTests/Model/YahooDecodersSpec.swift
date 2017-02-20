@@ -21,5 +21,16 @@ class YahooDecodersSpec: QuickSpec {
                 
             })
         }
+        
+        describe("YahooEncode -> Decode") {
+            it("should decode encoded objects", closure: { 
+                let currency = YahooCurrency.generateTest()
+                let encoded = currency.encode().JSONObject()
+                expect(encoded).toNot(beNil())
+                let currency2: YahooCurrency? = decode(encoded)
+                expect(currency2).toNot(beNil())
+                expect(currency2).to(equal(currency))
+            })
+        }
     }
 }

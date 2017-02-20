@@ -8,6 +8,7 @@
 
 import Foundation
 import Argo
+import Ogra
 import Curry
 import Runes
 
@@ -19,7 +20,7 @@ struct YahooConstants {
 
 // MARK: - YahooCurrencySymbol
 
-public struct YahooCurrencySymbol: APIStringQueryRepresentable {
+public struct YahooCurrencySymbol: APIStringQueryRepresentable, Equatable {
     public let currency: Currency
     
     func apiStringQueryRepresentation() -> String {
@@ -27,7 +28,11 @@ public struct YahooCurrencySymbol: APIStringQueryRepresentable {
     }
 }
 
-extension YahooCurrencySymbol: Decodable {
+public func ==(c1: YahooCurrencySymbol, c2: YahooCurrencySymbol) -> Bool {
+    return c1.currency == c2.currency
+}
+
+extension YahooCurrencySymbol: Decodable, Encodable {
     static func create(rawSymbol: String) -> YahooCurrencySymbol? {
         let components = rawSymbol.components(separatedBy: "=")
         if components.count == 2 && components[1] == "X"  {
@@ -51,11 +56,15 @@ extension YahooCurrencySymbol: Decodable {
             return .failure(DecodeError.typeMismatch(expected: "String", actual: json.description))
         }
     }
+    
+    public func encode() -> JSON {
+        return JSON.string(self.currency + "=X")
+    }
 }
 
 // MARK: - YahooCurrencyName
 
-public struct YahooCurrencyName {
+public struct YahooCurrencyName: Equatable {
     public let name: String
     
     public var currencies: Set<Currency> {
@@ -69,7 +78,11 @@ public struct YahooCurrencyName {
     }
 }
 
-extension YahooCurrencyName: Decodable {
+public func ==(c1: YahooCurrencyName, c2: YahooCurrencyName) -> Bool {
+    return c1.name == c2.name
+}
+
+extension YahooCurrencyName: Decodable, Encodable {
     public static func decode(_ json: JSON) -> Decoded<YahooCurrencyName> {
         switch json {
         case let .string(s):
@@ -77,6 +90,10 @@ extension YahooCurrencyName: Decodable {
         default:
             return .failure(DecodeError.typeMismatch(expected: "String", actual: json.description))
         }
+    }
+    
+    public func encode() -> JSON {
+        return JSON.string(self.name)
     }
 }
 
@@ -113,16 +130,27 @@ public struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryReprese
 
 // MARK: - YahooCurrency
 
-public struct YahooCurrency {
+public struct YahooCurrency: Equatable {
     public let symbol: YahooCurrencySymbol?
     public let name: YahooCurrencyName?
 }
 
-extension YahooCurrency: Decodable {
+public func ==(c1: YahooCurrency, c2: YahooCurrency) -> Bool {
+    return c1.symbol == c2.symbol && c1.name == c2.name
+}
+
+extension YahooCurrency: Decodable, Encodable {
     public static func decode(_ json: JSON) -> Decoded<YahooCurrency> {
         return curry(YahooCurrency.init)
             <^> json <|? ["resource", "fields", "symbol"]
             <*> json <|? ["resource", "fields", "name"]
+    }
+    
+    public func encode() -> JSON {
+        return JSON.object(["resource" : JSON.object([ "fields" : JSON.object(["symbol" : symbol?.encode() ?? JSON.string(""),
+                                                                               "name" : self.name?.encode() ?? JSON.string("")])
+                                         ])
+            ])
     }
 }
 
