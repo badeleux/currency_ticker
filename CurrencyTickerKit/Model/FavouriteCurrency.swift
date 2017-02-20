@@ -11,7 +11,7 @@ import ReactiveSwift
 import Result
 import Argo
 
-class FavouriteCurrency {
+public class FavouriteCurrency {
     static let FavCurrenciesKey = "FavCurrenciesKey"
     public static let shared = FavouriteCurrency()
     

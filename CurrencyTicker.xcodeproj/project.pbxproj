@@ -36,6 +36,7 @@
 		ED88EF351E57B2310088B0C0 /* currency_list.json in Resources */ = {isa = PBXBuildFile; fileRef = ED88EF341E57B2310088B0C0 /* currency_list.json */; };
 		ED9E40B41E5B28F300D0222C /* FavouriteCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40B31E5B28F300D0222C /* FavouriteCurrency.swift */; };
 		ED9E40B81E5B7E8D00D0222C /* FavouriteCurrencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40B71E5B7E8D00D0222C /* FavouriteCurrencySpec.swift */; };
+		ED9E40BA1E5B8BFE00D0222C /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40B91E5B8BFE00D0222C /* Setup.swift */; };
 		EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */; };
 		EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295221E57B75100BF4F7A /* Bundle.swift */; };
 		EDE295251E584C7E00BF4F7A /* YahooDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */; };
@@ -157,6 +158,7 @@
 		ED88EF341E57B2310088B0C0 /* currency_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currency_list.json; sourceTree = "<group>"; };
 		ED9E40B31E5B28F300D0222C /* FavouriteCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteCurrency.swift; sourceTree = "<group>"; };
 		ED9E40B71E5B7E8D00D0222C /* FavouriteCurrencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteCurrencySpec.swift; sourceTree = "<group>"; };
+		ED9E40B91E5B8BFE00D0222C /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooCurrencySpec.swift; sourceTree = "<group>"; };
 		EDE295221E57B75100BF4F7A /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooDecoders.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				ED22F4D31E57636C00E98912 /* Assets.xcassets */,
 				ED22F4D51E57636C00E98912 /* LaunchScreen.storyboard */,
 				ED22F4D81E57636C00E98912 /* Info.plist */,
+				ED9E40B91E5B8BFE00D0222C /* Setup.swift */,
 			);
 			path = CurrencyTicker;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED22F4CF1E57636C00E98912 /* ViewController.swift in Sources */,
+				ED9E40BA1E5B8BFE00D0222C /* Setup.swift in Sources */,
 				ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
