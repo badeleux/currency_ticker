@@ -12,17 +12,24 @@ end
 target 'CurrencyTickerKit' do
     shared_pods
     pod 'Alamofire', '~> 4.3'
-    pod 'Moya'
-    pod 'Moya-Argo'
-    pod 'Moya/ReactiveSwift'
+    pod 'Moya-Argo/ReactiveCocoa'
+    pod 'Curry'
+    pod 'SwiftDate', '~> 4.0'
+    
+    target 'CurrencyTickerKitTests' do
+        inherit! :search_paths
+        
+        pod 'Quick'
+        pod 'Nimble'
+    end
 end
 
 target 'CurrencyTickeriOS' do
     shared_pods
     pod 'DZNEmptyDataSet'
     #pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-    pod "EasyPeasy"
-    pod "ReactiveCocoa"
+    pod 'EasyPeasy'
+    pod 'ReactiveCocoa'
     pod 'SwiftCharts', '~> 0.5'
     pod 'SwiftMessages'
     pod 'FoldingCell'

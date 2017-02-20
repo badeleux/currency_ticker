@@ -1,0 +1,31 @@
+{
+    "query": {
+        "count": 2,
+        "created": "2017-02-18T12:31:29Z",
+        "lang": "en-US",
+        "results": {
+            "quote": [
+                      {
+                      "Symbol": "PLN%3dX",
+                      "Date": "2017-02-17",
+                      "Open": "4.04626",
+                      "High": "4.0767",
+                      "Low": "4.0383",
+                      "Close": "4.04344",
+                      "Volume": "000",
+                      "Adj_Close": "4.04344"
+                      },
+                      {
+                      "Symbol": "PLN%3dX",
+                      "Date": "2017-02-16",
+                      "Open": "4.06586",
+                      "High": "4.0711",
+                      "Low": "4.0424",
+                      "Close": "4.0664",
+                      "Volume": "000",
+                      "Adj_Close": "4.0664"
+                      }
+                      ]
+        }
+    }
+}
