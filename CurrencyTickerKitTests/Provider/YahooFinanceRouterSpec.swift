@@ -4,6 +4,7 @@ import Nimble
 import Moya
 import Moya_Argo
 import Moya
+import SwiftDate
 
 class YahooFinanceRouterSpec: QuickSpec {
     override func spec() {
@@ -18,11 +19,37 @@ class YahooFinanceRouterSpec: QuickSpec {
         }
         
         describe("test requests") { 
-            it("should return", closure: { 
+            it("currency list", closure: {
                 let api = YahooFinanceAPI()
                 waitUntil(timeout: 6.0, action: { done in
                     api.currencyList()
                         .on(value: { (list: YahooCurrencyList) in
+                            done()
+                        })
+                        .logEvents()
+                        .start()
+                })
+                
+            })
+            
+            it("currency exchage", closure: {
+                let api = YahooFinanceAPI()
+                waitUntil(timeout: 6.0, action: { done in
+                    api.currencyExchange(pair: YahooCurrencyPair(from: "USD", to: "PLN"))
+                        .on(value: { (list: YahooCurrencyExchangeQueryResult) in
+                            done()
+                        })
+                        .logEvents()
+                        .start()
+                })
+                
+            })
+            
+            it("currency historical data query", closure: {
+                let api = YahooFinanceAPI()
+                waitUntil(timeout: 6.0, action: { done in
+                    api.currencyHistoricalData(symbol: YahooCurrencySymbol(currency: "PLN"), start: Date() - 2.weeks, end: Date())
+                        .on(value: { (list: YahooSymbolHistoricalDataQueryResult) in
                             done()
                         })
                         .logEvents()

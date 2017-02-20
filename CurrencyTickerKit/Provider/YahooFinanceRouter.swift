@@ -65,9 +65,13 @@ extension YahooFinanceRouter: TargetType {
         case let .historicalData(symbol, dateStart, dateEnd):
             let startDateString = DateFormatter.yahooDateOnly().string(from: dateStart)
             let endDateString = DateFormatter.yahooDateOnly().string(from: dateEnd)
-            return ["q" : "SELECT * FROM yahoo.finance.historicaldata WHERE symbol = \"\(symbol.apiStringQueryRepresentation())\" AND startDate = \"\(startDateString)\" AND endDate = \"\(endDateString)\""]
+            return ["q" : "SELECT * FROM yahoo.finance.historicaldata WHERE symbol = \"\(symbol.apiStringQueryRepresentation())\" AND startDate = \"\(startDateString)\" AND endDate = \"\(endDateString)\"",
+                "format" : "json",
+                "env" : "store://datatables.org/alltableswithkeys"]
         case let .exchangeRate(pair):
-            return ["q" : "select * from yahoo.finance.xchange where pair in (\"\(pair.apiStringQueryRepresentation())\")"]
+            return ["q" : "select * from yahoo.finance.xchange where pair in (\"\(pair.apiStringQueryRepresentation())\")",
+                "format" : "json",
+                "env" : "store://datatables.org/alltableswithkeys"]
         case .currencyList:
             return ["format" : "json"]
         }

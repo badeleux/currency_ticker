@@ -8,26 +8,31 @@
 
 import Foundation
 import Moya_Argo
+
 import Moya
 import ReactiveSwift
 import Argo
 
+
 class YahooFinanceAPI {
-    let provider = ReactiveSwiftMoyaProvider<YahooFinanceRouter>()
+    let provider = ReactiveSwiftMoyaProvider<YahooFinanceRouter>(plugins: [NetworkLoggerPlugin()])
     
     func currencyList() -> SignalProducer<YahooCurrencyList, MoyaError> {
-        let result = self.provider
+        return self.provider
             .request(.currencyList)
-            .flatMap(.latest, transform: { (response: Response) -> SignalProducer<YahooCurrencyList, MoyaError> in
-                do {
-                    let list: YahooCurrencyList = try response.mapObjectWithRootKey(rootKey: "list")
-                    return .init(value: list)
-                } catch let error as MoyaError {
-                    return .init(error: error)
-                } catch {
-                    return .init(error: MoyaError.requestMapping("Unknown Error"))
-                }
-            })
-        return result
+            .mapObject(type: YahooCurrencyList.self, rootKey: "list")
     }
+    
+    func currencyExchange(pair: YahooCurrencyPairable) -> SignalProducer<YahooCurrencyExchangeQueryResult, MoyaError> {
+        return self.provider
+            .request(.exchangeRate(pair: pair))
+            .mapObject(type: YahooCurrencyExchangeQueryResult.self, rootKey: "query")
+    }
+    
+    func currencyHistoricalData(symbol: YahooCurrencySymbol, start: Date, end: Date) -> SignalProducer<YahooSymbolHistoricalDataQueryResult, MoyaError> {
+        return self.provider
+            .request(.historicalData(symbol: symbol, dateStart: start, dateEnd: end))
+            .mapObject(type: YahooSymbolHistoricalDataQueryResult.self, rootKey: "query")
+    }
+    
 }

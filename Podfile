@@ -12,9 +12,7 @@ end
 target 'CurrencyTickerKit' do
     shared_pods
     pod 'Alamofire', '~> 4.3'
-    pod 'Moya'
-    pod 'Moya-Argo'
-    pod 'Moya/ReactiveSwift'
+    pod 'Moya-Argo/ReactiveCocoa'
     pod 'Curry'
     pod 'SwiftDate', '~> 4.0'
     

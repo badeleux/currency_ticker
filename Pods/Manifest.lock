@@ -8,14 +8,17 @@ PODS:
   - FoldingCell (2.0.3)
   - Moya (8.0.2):
     - Moya/Core (= 8.0.2)
-  - Moya-Argo (2.0.0):
-    - Moya-Argo/Core (= 2.0.0)
   - Moya-Argo/Core (2.0.0):
     - Argo (~> 4.1)
     - Moya (~> 8.0)
+  - Moya-Argo/ReactiveCocoa (2.0.0):
+    - Moya-Argo/Core
+    - Moya/ReactiveCocoa
   - Moya/Core (8.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - Moya/ReactiveCocoa (8.0.2):
+    - Moya/ReactiveSwift
   - Moya/ReactiveSwift (8.0.2):
     - Moya/Core
     - ReactiveSwift (~> 1.0)
@@ -37,9 +40,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - EasyPeasy
   - FoldingCell
-  - Moya
-  - Moya-Argo
-  - Moya/ReactiveSwift
+  - Moya-Argo/ReactiveCocoa
   - Nimble
   - Quick
   - ReactiveCocoa
@@ -67,6 +68,6 @@ SPEC CHECKSUMS:
   SwiftDate: 9a50045abc7b3515ede0fbed94705907279177b5
   SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
 
-PODFILE CHECKSUM: e4f6e3e09a17f6a4a4603efa48a9acb5b36c043a
+PODFILE CHECKSUM: bd622092361831a6747dc0cf7a824444bf047000
 
 COCOAPODS: 1.2.0
