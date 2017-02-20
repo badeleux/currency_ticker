@@ -14,22 +14,24 @@ import ReactiveSwift
 import Argo
 
 
-class YahooFinanceAPI {
+public class YahooFinanceAPI {
     let provider = ReactiveSwiftMoyaProvider<YahooFinanceRouter>(plugins: [NetworkLoggerPlugin()])
+    public static let shared = YahooFinanceAPI()
+    private init() { }
     
-    func currencyList() -> SignalProducer<YahooCurrencyList, MoyaError> {
+    public func currencyList() -> SignalProducer<YahooCurrencyList, MoyaError> {
         return self.provider
             .request(.currencyList)
             .mapObject(type: YahooCurrencyList.self, rootKey: "list")
     }
     
-    func currencyExchange(pair: YahooCurrencyPairable) -> SignalProducer<YahooCurrencyExchangeQueryResult, MoyaError> {
+    public func currencyExchange(pair: YahooCurrencyPairable) -> SignalProducer<YahooCurrencyExchangeQueryResult, MoyaError> {
         return self.provider
             .request(.exchangeRate(pair: pair))
             .mapObject(type: YahooCurrencyExchangeQueryResult.self, rootKey: "query")
     }
     
-    func currencyHistoricalData(symbol: YahooCurrencySymbol, start: Date, end: Date) -> SignalProducer<YahooSymbolHistoricalDataQueryResult, MoyaError> {
+    public func currencyHistoricalData(symbol: YahooCurrencySymbol, start: Date, end: Date) -> SignalProducer<YahooSymbolHistoricalDataQueryResult, MoyaError> {
         return self.provider
             .request(.historicalData(symbol: symbol, dateStart: start, dateEnd: end))
             .mapObject(type: YahooSymbolHistoricalDataQueryResult.self, rootKey: "query")

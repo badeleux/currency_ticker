@@ -11,12 +11,12 @@ import Argo
 import Curry
 import Runes
 
-struct YahooCurrencyList {
-    let currencies: [YahooCurrency]
+public struct YahooCurrencyList {
+    public let currencies: [YahooCurrency]
 }
 
 extension YahooCurrencyList: Decodable {
-    static func decode(_ json: JSON) -> Decoded<YahooCurrencyList> {
+    public static func decode(_ json: JSON) -> Decoded<YahooCurrencyList> {
         return curry(YahooCurrencyList.init)
             <^> json <|| "resources"
     }
@@ -26,12 +26,12 @@ extension YahooCurrencyList: Decodable {
     }
 }
 
-struct YahooCurrencyExchangeQueryResult {
-    let rate: YahooCurrencyExchanceRate
+public struct YahooCurrencyExchangeQueryResult {
+    public let rate: YahooCurrencyExchanceRate
 }
 
 extension YahooCurrencyExchangeQueryResult: Decodable {
-    static func decode(_ json: JSON) -> Decoded<YahooCurrencyExchangeQueryResult> {
+    public static func decode(_ json: JSON) -> Decoded<YahooCurrencyExchangeQueryResult> {
         return curry(YahooCurrencyExchangeQueryResult.init)
             <^> json <| ["results", "rate"]
     }
@@ -41,12 +41,12 @@ extension YahooCurrencyExchangeQueryResult: Decodable {
     }
 }
 
-struct YahooSymbolHistoricalDataQueryResult {
-    let data: [YahooSymbolHistoricalData]
+public struct YahooSymbolHistoricalDataQueryResult {
+    public let data: [YahooSymbolHistoricalData]
 }
 
 extension YahooSymbolHistoricalDataQueryResult: Decodable {
-    static func decode(_ json: JSON) -> Decoded<YahooSymbolHistoricalDataQueryResult> {
+    public static func decode(_ json: JSON) -> Decoded<YahooSymbolHistoricalDataQueryResult> {
         return curry(YahooSymbolHistoricalDataQueryResult.init)
             <^> json <|| ["results", "quote"]
     }

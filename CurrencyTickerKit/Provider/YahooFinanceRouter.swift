@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-public typealias Currency = String
+public typealias CurrencyCode = String
 
 protocol APIStringQueryRepresentable {
     func apiStringQueryRepresentation() -> String

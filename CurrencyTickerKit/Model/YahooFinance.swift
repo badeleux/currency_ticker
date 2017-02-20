@@ -21,22 +21,22 @@ struct YahooConstants {
 // MARK: - YahooCurrencySymbol
 
 public struct YahooCurrencySymbol: APIStringQueryRepresentable, Equatable {
-    public let currency: Currency
+    public let code: CurrencyCode
     
     func apiStringQueryRepresentation() -> String {
-        return self.currency + "=X"
+        return self.code + "=X"
     }
 }
 
 public func ==(c1: YahooCurrencySymbol, c2: YahooCurrencySymbol) -> Bool {
-    return c1.currency == c2.currency
+    return c1.code == c2.code
 }
 
 extension YahooCurrencySymbol: Decodable, Encodable {
     static func create(rawSymbol: String) -> YahooCurrencySymbol? {
         let components = rawSymbol.components(separatedBy: "=")
         if components.count == 2 && components[1] == "X"  {
-            return YahooCurrencySymbol(currency: components[0])
+            return YahooCurrencySymbol(code: components[0])
         }
         return nil
     }
@@ -58,7 +58,7 @@ extension YahooCurrencySymbol: Decodable, Encodable {
     }
     
     public func encode() -> JSON {
-        return JSON.string(self.currency + "=X")
+        return JSON.string(self.code + "=X")
     }
 }
 
@@ -67,7 +67,7 @@ extension YahooCurrencySymbol: Decodable, Encodable {
 public struct YahooCurrencyName: Equatable {
     public let name: String
     
-    public var currencies: Set<Currency> {
+    public var currencies: Set<CurrencyCode> {
         let components = name.components(separatedBy: "/")
         if components.count == 2 {
             return Set(components)
@@ -100,8 +100,8 @@ extension YahooCurrencyName: Decodable, Encodable {
 // MARK: - YahooCurrencyPair
 
 public protocol YahooCurrencyPairable {
-    var from: Currency { get }
-    var to: Currency { get }
+    var from: CurrencyCode { get }
+    var to: CurrencyCode { get }
 }
 
 extension YahooCurrencyPairable {
@@ -116,16 +116,20 @@ extension YahooCurrencyPairable {
         }
         return nil
     }
+    
+    func toYahooCurrencyName() -> YahooCurrencyName {
+        return YahooCurrencyName(name: self.from + "/" + self.to)
+    }
 }
 
 public struct YahooCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
-    public let from: Currency
-    public let to: Currency
+    public let from: CurrencyCode
+    public let to: CurrencyCode
 }
 
 public struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
-    public let from: Currency = YahooConstants.USD
-    public let to: Currency
+    public let from: CurrencyCode = YahooConstants.USD
+    public let to: CurrencyCode
 }
 
 // MARK: - YahooCurrency
@@ -133,6 +137,10 @@ public struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryReprese
 public struct YahooCurrency: Equatable {
     public let symbol: YahooCurrencySymbol?
     public let name: YahooCurrencyName?
+    
+    public static func currency(currencyCode: CurrencyCode) -> YahooCurrency {
+        return YahooCurrency(symbol: YahooCurrencySymbol(code: currencyCode), name: YahooUSDCurrencyPair(to: currencyCode).toYahooCurrencyName())
+    }
 }
 
 public func ==(c1: YahooCurrency, c2: YahooCurrency) -> Bool {
