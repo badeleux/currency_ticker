@@ -76,6 +76,14 @@ public struct YahooCurrencyName: Equatable {
             return Set()
         }
     }
+    
+    public var toPair: YahooCurrencyPair? {
+        let components = name.components(separatedBy: "/")
+        if components.count == 2 {
+            return YahooCurrencyPair(from: components.first!, to: components[1])
+        }
+        return nil
+    }
 }
 
 public func ==(c1: YahooCurrencyName, c2: YahooCurrencyName) -> Bool {

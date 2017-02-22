@@ -12,7 +12,6 @@
 		7C0E0461708F5A70CA8A307B /* Pods_CurrencyTicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB93FDA6F512C2E4D0CA38C6 /* Pods_CurrencyTicker.framework */; };
 		93F8933172C6CDFA680E1D73 /* Pods_CurrencyTickerKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB5A13AB8AEE4CAD7E1121A /* Pods_CurrencyTickerKitTests.framework */; };
 		ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CC1E57636C00E98912 /* AppDelegate.swift */; };
-		ED22F4CF1E57636C00E98912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CE1E57636C00E98912 /* ViewController.swift */; };
 		ED22F4D21E57636C00E98912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D01E57636C00E98912 /* Main.storyboard */; };
 		ED22F4D41E57636C00E98912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D31E57636C00E98912 /* Assets.xcassets */; };
 		ED22F4D71E57636C00E98912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D51E57636C00E98912 /* LaunchScreen.storyboard */; };
@@ -37,6 +36,11 @@
 		ED9E40B41E5B28F300D0222C /* FavouriteCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40B31E5B28F300D0222C /* FavouriteCurrency.swift */; };
 		ED9E40B81E5B7E8D00D0222C /* FavouriteCurrencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40B71E5B7E8D00D0222C /* FavouriteCurrencySpec.swift */; };
 		ED9E40BA1E5B8BFE00D0222C /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40B91E5B8BFE00D0222C /* Setup.swift */; };
+		ED9E40BC1E5C3F8300D0222C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40BB1E5C3F8300D0222C /* DashboardViewController.swift */; };
+		ED9E40C01E5C4F5500D0222C /* DashboardDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40BF1E5C4F5500D0222C /* DashboardDataProvider.swift */; };
+		ED9E40F21E5CF63900D0222C /* SignalProducer+IgnoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F11E5CF63900D0222C /* SignalProducer+IgnoreError.swift */; };
+		ED9E40F41E5CF99C00D0222C /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */; };
+		ED9E40F61E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */; };
 		EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */; };
 		EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295221E57B75100BF4F7A /* Bundle.swift */; };
 		EDE295251E584C7E00BF4F7A /* YahooDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */; };
@@ -129,7 +133,6 @@
 		EBE24AE9F3810A822ABB9B33 /* Pods-CurrencyTickeriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickeriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED22F4C91E57636C00E98912 /* CurrencyTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F4CC1E57636C00E98912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED22F4CE1E57636C00E98912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED22F4D11E57636C00E98912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED22F4D31E57636C00E98912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED22F4D61E57636C00E98912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,6 +162,11 @@
 		ED9E40B31E5B28F300D0222C /* FavouriteCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteCurrency.swift; sourceTree = "<group>"; };
 		ED9E40B71E5B7E8D00D0222C /* FavouriteCurrencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteCurrencySpec.swift; sourceTree = "<group>"; };
 		ED9E40B91E5B8BFE00D0222C /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		ED9E40BB1E5C3F8300D0222C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		ED9E40BF1E5C4F5500D0222C /* DashboardDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDataProvider.swift; sourceTree = "<group>"; };
+		ED9E40F11E5CF63900D0222C /* SignalProducer+IgnoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignalProducer+IgnoreError.swift"; sourceTree = "<group>"; };
+		ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrecyExchangeRatesViewModel.swift; sourceTree = "<group>"; };
 		EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooCurrencySpec.swift; sourceTree = "<group>"; };
 		EDE295221E57B75100BF4F7A /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooDecoders.swift; sourceTree = "<group>"; };
@@ -282,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				ED22F4CC1E57636C00E98912 /* AppDelegate.swift */,
-				ED22F4CE1E57636C00E98912 /* ViewController.swift */,
 				ED22F4D01E57636C00E98912 /* Main.storyboard */,
 				ED22F4D31E57636C00E98912 /* Assets.xcassets */,
 				ED22F4D51E57636C00E98912 /* LaunchScreen.storyboard */,
@@ -304,6 +311,7 @@
 		ED22F4F21E5767AD00E98912 /* CurrencyTickerKit */ = {
 			isa = PBXGroup;
 			children = (
+				ED9E40C11E5C52F500D0222C /* ViewModel */,
 				ED88EF331E57B2150088B0C0 /* Resources */,
 				ED88EF221E579DC20088B0C0 /* Formatters */,
 				ED88EF1E1E5778500088B0C0 /* Provider */,
@@ -311,6 +319,7 @@
 				ED22F4F31E5767AD00E98912 /* CurrencyTickerKit.h */,
 				ED22F4F41E5767AD00E98912 /* Info.plist */,
 				EDE295221E57B75100BF4F7A /* Bundle.swift */,
+				ED9E40F11E5CF63900D0222C /* SignalProducer+IgnoreError.swift */,
 			);
 			path = CurrencyTickerKit;
 			sourceTree = "<group>";
@@ -332,6 +341,9 @@
 			children = (
 				ED22F5161E5767BB00E98912 /* CurrencyTickeriOS.h */,
 				ED22F5171E5767BB00E98912 /* Info.plist */,
+				ED9E40BB1E5C3F8300D0222C /* DashboardViewController.swift */,
+				ED9E40BF1E5C4F5500D0222C /* DashboardDataProvider.swift */,
+				ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */,
 			);
 			path = CurrencyTickeriOS;
 			sourceTree = "<group>";
@@ -407,6 +419,14 @@
 				EDE2952A1E58675400BF4F7A /* currency_historical_data.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED9E40C11E5C52F500D0222C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -589,6 +609,7 @@
 					ED22F5131E5767BB00E98912 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EWQZR3J8HN;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					ED22F51B1E5767BB00E98912 = {
@@ -832,7 +853,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED22F4CF1E57636C00E98912 /* ViewController.swift in Sources */,
 				ED9E40BA1E5B8BFE00D0222C /* Setup.swift in Sources */,
 				ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */,
 			);
@@ -857,6 +877,8 @@
 				EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */,
 				ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */,
 				ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */,
+				ED9E40F61E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift in Sources */,
+				ED9E40F21E5CF63900D0222C /* SignalProducer+IgnoreError.swift in Sources */,
 				EDE2952F1E58813D00BF4F7A /* YahooFinanceContainers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,6 +900,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9E40BC1E5C3F8300D0222C /* DashboardViewController.swift in Sources */,
+				ED9E40F41E5CF99C00D0222C /* CurrencyTableViewCell.swift in Sources */,
+				ED9E40C01E5C4F5500D0222C /* DashboardDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,6 +1212,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBE24AE9F3810A822ABB9B33 /* Pods-CurrencyTickeriOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1200,6 +1226,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.sciencespir.CurrencyTickeriOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1210,6 +1237,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 896CCC990B40D9248FA195FA /* Pods-CurrencyTickeriOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
