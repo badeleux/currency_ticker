@@ -33,6 +33,13 @@ public class FavouriteCurrency {
         return []
     }
     
+    public lazy var stream: Signal<[CurrencyCode], NoError> = {
+        return NotificationCenter.default
+            .reactive
+            .notifications(forName: UserDefaults.didChangeNotification, object: self.userDefaults)
+            .map { [weak self] _ in self?.get() ?? [] }
+    }()
+    
     public func add(currency: CurrencyCode) {
         self.set(currencies: self.get() + [currency])
     }

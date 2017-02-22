@@ -16,6 +16,7 @@ import Runes
 
 struct YahooConstants {
     static let USD = "USD"
+    static let EUR = "EUR"
 }
 
 // MARK: - YahooCurrencySymbol
@@ -137,6 +138,11 @@ public struct YahooCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresenta
 
 public struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
     public let from: CurrencyCode = YahooConstants.USD
+    public let to: CurrencyCode
+}
+
+public struct YahooEURCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
+    public let from: CurrencyCode = YahooConstants.EUR
     public let to: CurrencyCode
 }
 

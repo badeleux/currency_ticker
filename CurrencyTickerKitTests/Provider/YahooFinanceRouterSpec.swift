@@ -35,7 +35,7 @@ class YahooFinanceRouterSpec: QuickSpec {
             it("currency exchage", closure: {
                 let api = YahooFinanceAPI.shared
                 waitUntil(timeout: 6.0, action: { done in
-                    api.currencyExchange(pairs: [YahooCurrencyPair(from: "USD", to: "PLN"), YahooCurrencyPair(from: "EUR", to: "PLN")])
+                    api.currenciesExchange(pairs: [YahooCurrencyPair(from: "USD", to: "PLN"), YahooCurrencyPair(from: "EUR", to: "PLN")])
                         .on(value: { (list: YahooCurrencyExchangeQueryResults) in
                             expect(list.rates).to(haveCount(2))
                             done()

@@ -9,5 +9,6 @@
 import Foundation
 
 class CurrencyTableViewCell: UITableViewCell {
-    
+    @IBOutlet weak var currencyCodeLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
 }

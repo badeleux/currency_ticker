@@ -41,6 +41,8 @@
 		ED9E40F21E5CF63900D0222C /* SignalProducer+IgnoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F11E5CF63900D0222C /* SignalProducer+IgnoreError.swift */; };
 		ED9E40F41E5CF99C00D0222C /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */; };
 		ED9E40F61E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */; };
+		ED9E40F81E5E092200D0222C /* LoadableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40F71E5E092200D0222C /* LoadableViewModel.swift */; };
+		ED9E40FB1E5E1A0100D0222C /* LoadableViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E40FA1E5E1A0100D0222C /* LoadableViewModelSpec.swift */; };
 		EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */; };
 		EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295221E57B75100BF4F7A /* Bundle.swift */; };
 		EDE295251E584C7E00BF4F7A /* YahooDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */; };
@@ -167,6 +169,8 @@
 		ED9E40F11E5CF63900D0222C /* SignalProducer+IgnoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignalProducer+IgnoreError.swift"; sourceTree = "<group>"; };
 		ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrecyExchangeRatesViewModel.swift; sourceTree = "<group>"; };
+		ED9E40F71E5E092200D0222C /* LoadableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableViewModel.swift; sourceTree = "<group>"; };
+		ED9E40FA1E5E1A0100D0222C /* LoadableViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableViewModelSpec.swift; sourceTree = "<group>"; };
 		EDE295201E57B31F00BF4F7A /* YahooCurrencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooCurrencySpec.swift; sourceTree = "<group>"; };
 		EDE295221E57B75100BF4F7A /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		EDE295241E584C7E00BF4F7A /* YahooDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooDecoders.swift; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 		ED22F4FF1E5767AD00E98912 /* CurrencyTickerKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				ED9E40F91E5E19EA00D0222C /* ViewModel */,
 				ED88EF251E57A1F40088B0C0 /* Model */,
 				ED88EF261E57A1F40088B0C0 /* Provider */,
 				ED88EF271E57A1F40088B0C0 /* Formatters */,
@@ -425,6 +430,15 @@
 			isa = PBXGroup;
 			children = (
 				ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */,
+				ED9E40F71E5E092200D0222C /* LoadableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED9E40F91E5E19EA00D0222C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED9E40FA1E5E1A0100D0222C /* LoadableViewModelSpec.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -875,6 +889,7 @@
 				ED9E40B41E5B28F300D0222C /* FavouriteCurrency.swift in Sources */,
 				EDE2952D1E58795E00BF4F7A /* YahooFinanceAPI.swift in Sources */,
 				EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */,
+				ED9E40F81E5E092200D0222C /* LoadableViewModel.swift in Sources */,
 				ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */,
 				ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */,
 				ED9E40F61E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift in Sources */,
@@ -888,6 +903,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */,
+				ED9E40FB1E5E1A0100D0222C /* LoadableViewModelSpec.swift in Sources */,
 				ED88EF2B1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift in Sources */,
 				ED22F5011E5767AD00E98912 /* CurrencyTickerKitTests.swift in Sources */,
 				EDE295271E5850F500BF4F7A /* YahooDecodersSpec.swift in Sources */,
