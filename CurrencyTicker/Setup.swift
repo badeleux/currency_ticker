@@ -17,18 +17,7 @@ class Setup {
     func setupFavouriteCurrency() {
         if !FavouriteCurrency.shared.isDefined() {
             if let currencyCode = Locale.current.currencyCode {
-                YahooFinanceAPI.shared
-                    .currencyList()
-                    .map { $0.currencies.filter { $0.symbol?.code == currencyCode } }
-                    .on(value: { (currencies: [YahooCurrency]) in
-                        if currencies.count == 0 {
-                            FavouriteCurrency.shared.set(currency: [YahooCurrency.currency(currencyCode: currencyCode)])
-                        }
-                        else {
-                            FavouriteCurrency.shared.set(currency: currencies)
-                        }
-                    })
-                    .start()
+                FavouriteCurrency.shared.set(currencies: [currencyCode])
             }
         }
     }

@@ -17,7 +17,7 @@ protocol APIStringQueryRepresentable {
 
 public enum YahooFinanceRouter {
     case currencyList
-    case exchangeRate(pair: YahooCurrencyPairable)
+    case exchangeRate(pairs: [YahooCurrencyPairable])
     case historicalData(symbol: YahooCurrencySymbol, dateStart: Date, dateEnd: Date)
 }
 
@@ -68,8 +68,9 @@ extension YahooFinanceRouter: TargetType {
             return ["q" : "SELECT * FROM yahoo.finance.historicaldata WHERE symbol = \"\(symbol.apiStringQueryRepresentation())\" AND startDate = \"\(startDateString)\" AND endDate = \"\(endDateString)\"",
                 "format" : "json",
                 "env" : "store://datatables.org/alltableswithkeys"]
-        case let .exchangeRate(pair):
-            return ["q" : "select * from yahoo.finance.xchange where pair in (\"\(pair.apiStringQueryRepresentation())\")",
+        case let .exchangeRate(pairs):
+            let pairStrings = pairs.map { $0.apiStringQueryRepresentation() }.joined(separator: ",")
+            return ["q" : "select * from yahoo.finance.xchange where pair in (\"\(pairStrings)\")",
                 "format" : "json",
                 "env" : "store://datatables.org/alltableswithkeys"]
         case .currencyList:

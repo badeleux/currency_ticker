@@ -26,8 +26,21 @@ extension YahooCurrencyList: Decodable {
     }
 }
 
+public protocol YahooCurrencyExchangeQueryResults {
+    var rates: [YahooCurrencyExchanceRate] { get }
+    
+}
+
+// MARK: - YahooCurrencyExchangeQueryResult
+
 public struct YahooCurrencyExchangeQueryResult {
     public let rate: YahooCurrencyExchanceRate
+}
+
+extension YahooCurrencyExchangeQueryResult: YahooCurrencyExchangeQueryResults {
+    public var rates: [YahooCurrencyExchanceRate] {
+        return [self.rate]
+    }
 }
 
 extension YahooCurrencyExchangeQueryResult: Decodable {
@@ -39,6 +52,33 @@ extension YahooCurrencyExchangeQueryResult: Decodable {
     public static func mockedJSON() -> Data? {
         return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_exchange", withExtension: "json")!)
     }
+}
+
+// MARK: - YahooCurrencyExchangeQueryResults
+
+public struct YahooCurrenciesExchangeQueryResult: YahooCurrencyExchangeQueryResults {
+    public let rates: [YahooCurrencyExchanceRate]
+}
+
+extension YahooCurrenciesExchangeQueryResult: Decodable {
+    public static func decode(_ json: JSON) -> Decoded<YahooCurrenciesExchangeQueryResult> {
+        return curry(YahooCurrenciesExchangeQueryResult.init)
+            <^> json <|| ["results", "rate"]
+    }
+    
+    public static func mockedJSON() -> Data? {
+        return try? Data(contentsOf: Bundle.kit.url(forResource: "currency_exchange", withExtension: "json")!)
+    }
+}
+
+// MARK: - Type erasure for currency exchange query results
+
+public struct AnyYahooCurrenciesExchangeQueryResult: YahooCurrencyExchangeQueryResults {
+    init<T: YahooCurrencyExchangeQueryResults>(results: T) {
+        self.rates = results.rates
+    }
+    
+    public let rates: [YahooCurrencyExchanceRate]
 }
 
 public struct YahooSymbolHistoricalDataQueryResult {

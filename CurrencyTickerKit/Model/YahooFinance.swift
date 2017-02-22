@@ -16,6 +16,7 @@ import Runes
 
 struct YahooConstants {
     static let USD = "USD"
+    static let EUR = "EUR"
 }
 
 // MARK: - YahooCurrencySymbol
@@ -76,6 +77,14 @@ public struct YahooCurrencyName: Equatable {
             return Set()
         }
     }
+    
+    public var toPair: YahooCurrencyPair? {
+        let components = name.components(separatedBy: "/")
+        if components.count == 2 {
+            return YahooCurrencyPair(from: components.first!, to: components[1])
+        }
+        return nil
+    }
 }
 
 public func ==(c1: YahooCurrencyName, c2: YahooCurrencyName) -> Bool {
@@ -129,6 +138,11 @@ public struct YahooCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresenta
 
 public struct YahooUSDCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
     public let from: CurrencyCode = YahooConstants.USD
+    public let to: CurrencyCode
+}
+
+public struct YahooEURCurrencyPair: YahooCurrencyPairable, APIStringQueryRepresentable {
+    public let from: CurrencyCode = YahooConstants.EUR
     public let to: CurrencyCode
 }
 

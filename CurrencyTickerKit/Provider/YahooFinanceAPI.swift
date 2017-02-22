@@ -25,10 +25,23 @@ public class YahooFinanceAPI {
             .mapObject(type: YahooCurrencyList.self, rootKey: "list")
     }
     
-    public func currencyExchange(pair: YahooCurrencyPairable) -> SignalProducer<YahooCurrencyExchangeQueryResult, MoyaError> {
+    public func currencyExchange(pair: YahooCurrencyPairable) -> SignalProducer<AnyYahooCurrenciesExchangeQueryResult, MoyaError> {
         return self.provider
-            .request(.exchangeRate(pair: pair))
+            .request(.exchangeRate(pairs: [pair]))
             .mapObject(type: YahooCurrencyExchangeQueryResult.self, rootKey: "query")
+            .map { AnyYahooCurrenciesExchangeQueryResult(results: $0) }
+    }
+    
+    public func currenciesExchange(pairs: [YahooCurrencyPairable]) -> SignalProducer<AnyYahooCurrenciesExchangeQueryResult, MoyaError> {
+        if pairs.count == 1 {
+            return self.currencyExchange(pair: pairs.first!)
+        }
+        else {
+            return self.provider
+                .request(.exchangeRate(pairs: pairs))
+                .mapObject(type: YahooCurrenciesExchangeQueryResult.self, rootKey: "query")
+                .map { AnyYahooCurrenciesExchangeQueryResult(results: $0) }
+        }
     }
     
     public func currencyHistoricalData(symbol: YahooCurrencySymbol, start: Date, end: Date) -> SignalProducer<YahooSymbolHistoricalDataQueryResult, MoyaError> {

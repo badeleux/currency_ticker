@@ -21,21 +21,27 @@ public class FavouriteCurrency {
         self.userDefaults = userDefaults
     }
     
-    public func set(currency: [YahooCurrency]) {
-        self.userDefaults.set(currency.encode().JSONObject(), forKey: FavouriteCurrency.FavCurrenciesKey)
+    public func set(currencies: [CurrencyCode]) {
+        self.userDefaults.set(currencies, forKey: FavouriteCurrency.FavCurrenciesKey)
         self.userDefaults.synchronize()
     }
     
-    public func get() -> [YahooCurrency] {
-        if let o = self.userDefaults.object(forKey: FavouriteCurrency.FavCurrenciesKey) {
-            let currencies: [YahooCurrency]? = decode(o)
-            return currencies ?? []
+    public func get() -> [CurrencyCode] {
+        if let o = self.userDefaults.object(forKey: FavouriteCurrency.FavCurrenciesKey) as? [CurrencyCode] {
+            return o
         }
         return []
     }
     
-    public func add(currency: YahooCurrency) {
-        self.set(currency: self.get() + [currency])
+    public lazy var stream: Signal<[CurrencyCode], NoError> = {
+        return NotificationCenter.default
+            .reactive
+            .notifications(forName: UserDefaults.didChangeNotification, object: self.userDefaults)
+            .map { [weak self] _ in self?.get() ?? [] }
+    }()
+    
+    public func add(currency: CurrencyCode) {
+        self.set(currencies: self.get() + [currency])
     }
     
     public func isDefined() -> Bool {
