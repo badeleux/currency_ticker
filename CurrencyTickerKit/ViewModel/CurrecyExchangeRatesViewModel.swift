@@ -23,8 +23,8 @@ public class CurrecyExchangeRatesViewModel: LoadableViewModel, CurrencyExchangeR
     let currencyCodes = MutableProperty<[CurrencyCode]>([])
     let ratesQueryResult = MutableProperty<AnyYahooCurrenciesExchangeQueryResult?>(nil)
     
-    let error: Signal<MoyaError, NoError>
-    let loading: Signal<Bool, NoError>
+    public let error: Signal<MoyaError, NoError>
+    public let loading: Signal<Bool, NoError>
     
     private let errorProperty = MutableProperty<MoyaError?>(nil)
     private let loadingProperty = MutableProperty<Bool>(false)

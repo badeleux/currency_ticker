@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  CurrencyTicker
+
+  Created by Kamil Badyla on 23.02.2017.
+  Copyright © 2017 ScienceSpir.IT. All rights reserved.
+*/
+
+"empty_state_no_data" = "No Data";
+"empty_state_loading" = "Loading...";
+"empty_state_error" = "Error occurred";

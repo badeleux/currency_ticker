@@ -27,6 +27,9 @@
 		ED22F5291E5767BB00E98912 /* CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; };
 		ED22F52A1E5767BB00E98912 /* CurrencyTickeriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED22F5141E5767BB00E98912 /* CurrencyTickeriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED22F5321E5768F200E98912 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ED22F5311E5768F200E98912 /* Podfile */; };
+		ED496D271E5F79140007107D /* EmptyStateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED496D261E5F79140007107D /* EmptyStateDataSource.swift */; };
+		ED496D291E5F7AC80007107D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED496D281E5F7AC80007107D /* Localizable.strings */; };
+		ED6333F11E5F7D5E0047F7B2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6333F01E5F7D5E0047F7B2 /* Fonts.swift */; };
 		ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */; };
 		ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */; };
 		ED88EF291E57A2370088B0C0 /* DateFormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */; };
@@ -155,6 +158,9 @@
 		ED22F5231E5767BB00E98912 /* CurrencyTickeriOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTickeriOSTests.swift; sourceTree = "<group>"; };
 		ED22F5251E5767BB00E98912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED22F5311E5768F200E98912 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ED496D261E5F79140007107D /* EmptyStateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateDataSource.swift; sourceTree = "<group>"; };
+		ED496D281E5F7AC80007107D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		ED6333F01E5F7D5E0047F7B2 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinanceRouter.swift; sourceTree = "<group>"; };
 		ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormattersSpec.swift; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 				ED22F4D51E57636C00E98912 /* LaunchScreen.storyboard */,
 				ED22F4D81E57636C00E98912 /* Info.plist */,
 				ED9E40B91E5B8BFE00D0222C /* Setup.swift */,
+				ED496D281E5F7AC80007107D /* Localizable.strings */,
 			);
 			path = CurrencyTicker;
 			sourceTree = "<group>";
@@ -349,6 +356,8 @@
 				ED9E40BB1E5C3F8300D0222C /* DashboardViewController.swift */,
 				ED9E40BF1E5C4F5500D0222C /* DashboardDataProvider.swift */,
 				ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */,
+				ED496D261E5F79140007107D /* EmptyStateDataSource.swift */,
+				ED6333F01E5F7D5E0047F7B2 /* Fonts.swift */,
 			);
 			path = CurrencyTickeriOS;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED496D291E5F7AC80007107D /* Localizable.strings in Resources */,
 				ED22F4D71E57636C00E98912 /* LaunchScreen.storyboard in Resources */,
 				ED22F4D41E57636C00E98912 /* Assets.xcassets in Resources */,
 				ED22F5321E5768F200E98912 /* Podfile in Resources */,
@@ -916,6 +926,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED496D271E5F79140007107D /* EmptyStateDataSource.swift in Sources */,
+				ED6333F11E5F7D5E0047F7B2 /* Fonts.swift in Sources */,
 				ED9E40BC1E5C3F8300D0222C /* DashboardViewController.swift in Sources */,
 				ED9E40F41E5CF99C00D0222C /* CurrencyTableViewCell.swift in Sources */,
 				ED9E40C01E5C4F5500D0222C /* DashboardDataProvider.swift in Sources */,
