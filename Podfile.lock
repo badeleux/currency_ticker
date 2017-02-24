@@ -2,10 +2,12 @@ PODS:
   - Alamofire (4.3.0)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Curry (3.0.0)
   - DZNEmptyDataSet (1.8.1)
   - EasyPeasy (1.4.1)
-  - FoldingCell (2.0.3)
   - Moya (8.0.2):
     - Moya/Core (= 8.0.2)
   - Moya-Argo/Core (2.0.0):
@@ -39,10 +41,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Curry
   - DZNEmptyDataSet
   - EasyPeasy
-  - FoldingCell
   - Moya-Argo/ReactiveCocoa
   - Nimble
   - Ogra
@@ -54,13 +56,22 @@ DEPENDENCIES:
   - SwiftMessages
   - TextAttributes
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Argo: 5db06502fc1222d83011f574243089dab25202ff
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EasyPeasy: b8a2feebd47395aaf46bde178abcddd36c922d37
-  FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
   Moya: 47f61da5b634aa71f676431b64ee0f81e976296d
   Moya-Argo: ae9a8c7d10e0ab052b22f215d1fe540d31bb32d3
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
@@ -75,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
   TextAttributes: 45b2713a1d174c377d320b51129c304eac381638
 
-PODFILE CHECKSUM: 98363fbd1ddc041f6a772821262cca4943a1306a
+PODFILE CHECKSUM: 71d0b6802751ad79cda973e15429a76003250708
 
 COCOAPODS: 1.2.0
