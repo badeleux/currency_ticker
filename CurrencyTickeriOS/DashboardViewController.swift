@@ -71,10 +71,9 @@ class DashboardViewController: UITableViewController {
     //MARK: UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let rate = self.rates.value[indexPath.row]
-        //        let currencyCode = rate.name.currencies.first!
+        let currencyCode = FavouriteCurrency.shared.get()[indexPath.row]
         let viewModel = self.viewModel.yahooChartViewModel()
-        viewModel.configureWith(currencyCode: "PLN")
+        viewModel.configureWith(currencyCode: currencyCode)
         viewModel.timePeriod(last: 1.month)
         self.navigationController?.pushViewController(CandleStickInteractiveChartViewController(chartViewModel: viewModel), animated: true)
     }
