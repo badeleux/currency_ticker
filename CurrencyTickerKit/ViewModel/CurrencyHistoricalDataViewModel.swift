@@ -10,6 +10,7 @@ import Foundation
 import SwiftDate
 import ReactiveSwift
 import Result
+import Moya
 
 struct ChartSettings {
     static let XAxisValues = 20
@@ -50,7 +51,7 @@ protocol CurrencyHistoricalDataViewModelOutputs {
     var chartData: Signal<CurrencyChartData<T>, NoError> { get }
 }
 
-public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistoricalDataViewModelInputs, CurrencyHistoricalDataViewModelOutputs {
+public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistoricalDataViewModelInputs, CurrencyHistoricalDataViewModelOutputs, LoadableViewModel {
     
     // MARK: - Inputs
     let currencyCode = MutableProperty<CurrencyCode?>(nil)
@@ -69,12 +70,20 @@ public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistor
     }
     
     // MARK: - Outputs
+    public let loading: Signal<Bool, NoError>
+    public let error: Signal<MoyaError, NoError>
+    private let loadingProperty: MutableProperty<Bool>
+    private let errorProperty: MutableProperty<MoyaError?>
     
     public let chartData: Signal<CurrencyChartData<T>, NoError>
     
     init<R: HistoricalDataRetriever>(api: R) where R.T == T {
+        let loadingProperty = MutableProperty(false)
+        let errorProperty = MutableProperty<MoyaError?>(nil)
         let historicalData = self.currencyCode.signal.skipNil().combineLatest(with: self.timePeriod.signal.skipNil()).flatMap(.latest) { (tuple: (currencyCode: CurrencyCode, period: ChartTimePeriod)) -> SignalProducer<[T], NoError> in
             return api.currencyHistoricalData(currencyCode: tuple.currencyCode, start: tuple.period.startDate, end: tuple.period.endDate)
+                .forwardError(property: errorProperty)
+                .forwardLoading(property: loadingProperty)
                 .ignoreError()
         }
         self.chartData = historicalData.signal.combineLatest(with: self.timePeriod.signal.skipNil())
@@ -82,6 +91,10 @@ public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistor
                 let yAxisValues = CurrencyHistoricalDataViewModel.axisValues(data: tuple.data)
                 return CurrencyChartData(points: tuple.data, xAxisDates: tuple.period.days(), yAxisValues: yAxisValues)
             })
+        self.loadingProperty = loadingProperty
+        self.errorProperty = errorProperty
+        self.loading = loadingProperty.signal
+        self.error = errorProperty.signal.skipNil()
     }
     
     static func axisValues(data: [T], values: Int = ChartSettings.XAxisValues) -> [Float] {

@@ -23,6 +23,7 @@ class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewContr
     
     fileprivate var chart: Chart? // arc
     let chartViewModel: CurrencyHistoricalDataViewModel<T>
+    var emptyView: EmptyView?
     
     fileprivate static var defaultChartSettings: ChartSettings {
         var chartSettings = ChartSettings()
@@ -51,6 +52,11 @@ class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emptyView = EmptyView(frame: self.view.bounds, screen: .chart)
+        self.emptyView!.emptyStateDataSource.state <~ self.chartViewModel.emptyListState()
+        self.emptyView!.reactive.isHidden <~ self.chartViewModel.chartData.signal.map { _ in true }
+        self.view.addSubview(self.emptyView!)
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.view.backgroundColor = UIColor.white

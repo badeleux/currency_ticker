@@ -10,9 +10,11 @@ import Foundation
 import DZNEmptyDataSet
 import TextAttributes
 import ReactiveSwift
+import CurrencyTickerKit
+import Result
 
 enum EmptyStateScreen {
-    case dashboard
+    case dashboard, chart
 }
 
 enum EmptyListState {
@@ -25,6 +27,17 @@ class EmptyStateDataSource: NSObject {
     
     init(screen: EmptyStateScreen) {
         self.screen = screen
+    }
+}
+
+extension LoadableViewModel {
+    func emptyListState() -> Signal<EmptyListState, NoError> {
+        let errorState = self.error.map { error in EmptyListState.error(message: error.localizedDescription) }
+        let loading = self.loading
+            .filter { $0 }
+            .map { _ in EmptyListState.loading }
+        let state = Signal<EmptyListState, NoError>.merge(errorState, loading)
+        return state
     }
 }
 

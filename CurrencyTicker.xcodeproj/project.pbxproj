@@ -15,6 +15,7 @@
 		ED1FB9E21E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9E11E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift */; };
 		ED1FB9E41E60569700F1DDD9 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9E31E60569700F1DDD9 /* Formatters.swift */; };
 		ED1FB9E81E609ED800F1DDD9 /* EditFavouriteCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9E71E609ED800F1DDD9 /* EditFavouriteCurrenciesViewController.swift */; };
+		ED1FB9EA1E60AE0800F1DDD9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9E91E60AE0800F1DDD9 /* EmptyView.swift */; };
 		ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CC1E57636C00E98912 /* AppDelegate.swift */; };
 		ED22F4D21E57636C00E98912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D01E57636C00E98912 /* Main.storyboard */; };
 		ED22F4D41E57636C00E98912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D31E57636C00E98912 /* Assets.xcassets */; };
@@ -145,6 +146,7 @@
 		ED1FB9E11E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHistoricalDataViewModelSpec.swift; sourceTree = "<group>"; };
 		ED1FB9E31E60569700F1DDD9 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		ED1FB9E71E609ED800F1DDD9 /* EditFavouriteCurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFavouriteCurrenciesViewController.swift; sourceTree = "<group>"; };
+		ED1FB9E91E60AE0800F1DDD9 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		ED22F4C91E57636C00E98912 /* CurrencyTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F4CC1E57636C00E98912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED22F4D11E57636C00E98912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				ED6333F71E6029690047F7B2 /* CandleStickInteractiveChartViewController.swift */,
 				ED1FB9E31E60569700F1DDD9 /* Formatters.swift */,
 				ED1FB9E71E609ED800F1DDD9 /* EditFavouriteCurrenciesViewController.swift */,
+				ED1FB9E91E60AE0800F1DDD9 /* EmptyView.swift */,
 			);
 			path = CurrencyTickeriOS;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED496D271E5F79140007107D /* EmptyStateDataSource.swift in Sources */,
+				ED1FB9EA1E60AE0800F1DDD9 /* EmptyView.swift in Sources */,
 				ED6333F11E5F7D5E0047F7B2 /* Fonts.swift in Sources */,
 				ED9E40BC1E5C3F8300D0222C /* DashboardViewController.swift in Sources */,
 				ED1FB9E81E609ED800F1DDD9 /* EditFavouriteCurrenciesViewController.swift in Sources */,

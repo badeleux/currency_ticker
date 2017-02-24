@@ -10,7 +10,7 @@ import Foundation
 import Result
 import ReactiveSwift
 
-protocol LoadableViewModel {
+public protocol LoadableViewModel {
     associatedtype E: Error
     var loading: Signal<Bool, NoError> { get }
     var error: Signal<E, NoError> { get }

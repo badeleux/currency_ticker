@@ -29,17 +29,14 @@ class DashboardViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
 
         //empty state setup
-        let errorState = self.viewModel.error.map { error in EmptyListState.error(message: error.localizedDescription) }
-        let loading = self.viewModel.loading
-            .on(value: { [weak self] (isLoading: Bool) in
+        self.viewModel.loading
+            .observeValues({ [weak self] (isLoading: Bool) in
                 if !isLoading {
                     self?.refreshControl?.endRefreshing()
                 }
             })
-            .filter { $0 }
-            .map { _ in EmptyListState.loading }
         
-        let state = Signal<EmptyListState, NoError>.merge(errorState, loading)
+        let state = self.viewModel.emptyListState()
         self.emptyState.state <~ state
         self.tableView.emptyDataSetSource = self.emptyState
         self.tableView.emptyDataSetDelegate = self
