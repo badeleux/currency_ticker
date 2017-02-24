@@ -67,6 +67,10 @@ public class CurrecyExchangeRatesViewModel: LoadableViewModel, CurrencyExchangeR
         return self.ratesQueryResult.signal
     }
     
+    public func yahooChartViewModel() -> CurrencyHistoricalDataViewModel<YahooSymbolHistoricalData> {
+        return CurrencyHistoricalDataViewModel(api: YahooFinanceAPI.shared)
+    }
+    
     var inputs: CurrencyExchangeRatesViewModelInputs { return self }
     
     var outputs: CurrencyExchangeRatesViewModelOutputs { return self }

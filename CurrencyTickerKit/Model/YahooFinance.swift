@@ -209,6 +209,8 @@ public struct YahooSymbolHistoricalData {
     public let close: Float
 }
 
+extension YahooSymbolHistoricalData: CandleStickData { } 
+
 extension YahooSymbolHistoricalData: Decodable {
     public static func decode(_ json: JSON) -> Decoded<YahooSymbolHistoricalData> {
         return curry(YahooSymbolHistoricalData.init)

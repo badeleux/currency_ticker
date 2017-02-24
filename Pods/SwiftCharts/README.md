@@ -6,51 +6,56 @@
 
 Easy to use and highly customizable charts library for iOS
 
-##### Features:
+## Features:
 - Bars - plain, stacked, grouped, horizontal, vertical
 - Scatter
-- Line / Multiple lines
+- Lines (straight/cubic/custom path generator)
 - Areas
 - Bubble
-- Multiple axis
-- Multiple labels (x axis)
+- Multiple axes
 - Candlestick
-- Cubic line
-- Everything is customizable - views (user can generate arbitrary UIViews for each chartpoint, so everything is possible), animations, units, axis, etc.
-- Charts can be combined with each other (e.g. lines + bars + circles)
-- Complex interactivity support
-- Choice to use core graphics (directly on chart's context) or UIViews, or combine both.
-- **Easy to use**: no learning curve, no complicated settings - just assemble chart using well defined components.
+- Multiple labels per value (x axis)
+- Everything is customizable - colors, views, units, labels, animations, interactions, axes, etc.
+- Easy creation of arbitrary markers, overlays, info views, etc., using simple UIViews!
+- Modular architecture, which allows to easily create new chart types or add effects to existing types externally (without library changes).
+- Charts can be combined with each other.
+- [Pie chart*](https://github.com/i-schuetz/PieCharts)
+- [Legends*](https://github.com/i-schuetz/ChartLegends)
+- Zooming & panning, lockable to x/y axis, max delta or both. Elastic effect. (unreleased)
+- Extensible axis values and label generators for numbers, dates, etc, with customizable zooming handling (nice numbers, divide in half, etc). (unreleased).
+
+<sub>*These are separate repos for better focus and reusability.</sub>
 
 Swift 3.0, 2.x, 1.2, iOS 10, 9, 8, 7
 
 [Video](https://www.youtube.com/watch?v=bD6uDF-KckM)
 
-##### Screenshots:
-
 ![ScreenShot](Screenshots/IMG_0102.jpeg)
 ![ScreenShot](Screenshots/IMG_0022.jpeg)
 ![ScreenShot](Screenshots/IMG_0023.jpeg)
 ![ScreenShot of Multi-chart touch tracking](Screenshots/multi-chart-touch.jpg)
+
+![ScreenShot](Screenshots/IMG_1328.PNG)
+
 ![ScreenShot](Screenshots/IMG_0025.jpeg)
 ![ScreenShot](Screenshots/IMG_0026.jpeg)
 ![ScreenShot](Screenshots/IMG_0101.jpeg)
 ![ScreenShot](Screenshots/IMG_0027.jpeg)
-![ScreenShot](Screenshots/IMG_0028.jpeg)
+![ScreenShot](Screenshots/IMG_1330.PNG)
 ![ScreenShot](Screenshots/IMG_0029.jpeg)
-![ScreenShot](Screenshots/IMG_0031.jpeg)
+![ScreenShot](Screenshots/IMG_1332.PNG)
 ![ScreenShot](Screenshots/IMG_0033.jpeg)
 ![ScreenShot](Screenshots/IMG_0034.jpeg)
 ![ScreenShot](Screenshots/IMG_0037.jpeg)
-![ScreenShot](Screenshots/IMG_0038.jpeg)
+![ScreenShot](Screenshots/IMG_1334.PNG)
 ![ScreenShot](Screenshots/IMG_0039.jpeg)
 ![ScreenShot](Screenshots/IMG_0040.jpeg)
 ![ScreenShot](Screenshots/IMG_0041.jpeg)
 
 
-##### Installation
+## Installation
 
-##### CocoaPods
+### CocoaPods
 
 Add to your Podfile:
 
@@ -61,7 +66,14 @@ pod 'SwiftCharts', '~> 0.5'
 ```
 Note: To use Swift 3.x / master, you need Xcode 8+
 
-Swift 2.x:
+To use master directly (it's usually stable):
+```ruby
+pod 'SwiftCharts', :git => 'https://github.com/i-schuetz/SwiftCharts.git'
+```
+This is particularly useful if you see features listed or examples that are not released yet! 
+NOTE: Some examples in master have not been updated yet with correct configuration for zooming and panning.
+
+Swift 2.3 (not actively maintained):
 ```ruby
 use_frameworks!
 pod 'SwiftCharts', '~> 0.4'
@@ -88,7 +100,7 @@ Import the framework in your code:
 import SwiftCharts
 ```
 
-##### Carthage
+### Carthage
 
 Add to your Cartfile:
 
@@ -97,17 +109,17 @@ Swift 3.0:
 github "i-schuetz/SwiftCharts" ~> 0.5
 ```
 
-Swift 2.x:
+Swift 2.3 (not actively maintained):
 ```
 github "i-schuetz/SwiftCharts" ~> 0.4
 ```
 
-Swift 1.2:
+Swift 1.2 (not actively maintained):
 ```
 github "i-schuetz/SwiftCharts" ~> 0.2
 ```
 
-##### Quick start 
+## Quick start 
 
 Multiline chart:
 
@@ -159,15 +171,15 @@ self.view.addSubview(chart.view)
 self.chart = chart
 ```
 
-##### Concept:
+## Concept:
 
 - Layer architecture, which makes it extremely easy to customize charts, create new types, combine existing ones and add interactive elements.
 
 - Creation of views via a generator function, which makes it easy to use custom views in any layer.
 
-##### Main Components:
+### Main Components:
 
-##### 1. Layers:
+#### 1. Layers:
 
 A chart is the result of composing layers together. Everything is a layer - axis, guidelines, dividers, line, circles, etc. The idea is to have losely coupled components that can be easily changed and combined. This is for example the structure of a basic chart, which shows a line with circles:
 
@@ -238,13 +250,13 @@ self.view.addSubview(chart.view)
 self.chart = chart
 ```
 
-Layers are semantic units that can add views to the chart, or can simply draw in the chart's context for a better performance. Which makes more sense depends on the requirements.
+Layers decide how to present their data - this can be done adding subviews, (CA)layers, with core graphics, etc.
 
-##### 2. View generators:
+#### 2. View generators:
 
 View based layers will use a generator function to generate chart point views. This function receives the complete state of each chartpoint (model data, screen location) and produces an UIView, allowing any type of customization.
 
-##### Hello world:
+### Hello world:
 
 There's a [hello world](Examples/Examples/HelloWorld.swift) included in the examples, similar to the above code, with a bit more explanations. Change some properties of the generated views, copy paste the chartPointsLineLayer used in the snippet above, and pass it to the chart's layers, to display a line behind the views, and you have already mastered the main concepts!
 
@@ -257,17 +269,37 @@ There's a [hello world](Examples/Examples/HelloWorld.swift) included in the exam
 ###### [More documentation coming soon!](https://github.com/i-schuetz/SwiftCharts/wiki/Wiki)
 
 
-##### Contributing
+## Contributing
 
 1. Fork
 2. Commit changes to a branch in your fork
 3. Push your code and make a pull request
 
-##### Created By:
+## Todos:
+
+There are quite a lot of things that can be done, but here the main prios:
+
+- Dynamic adding/removing of chart points.
+- Lazy loading, EC.
+- Allow to set initial content view size that exceeds the chart's boundaries without having to use zoom.
+- macOS support.
+- Improve documentation.
+- Write a tutorial.
+- Objective-C support? I have gotten out of touch with Obj-C and don't even remember what exactly has to be done to add compatibility. If it doesn't require any major structural changes, it's also welcome. 
+
+If you want to help with any of these, feel free to open an issue to request for assistance. Happy to give an introduction to the internals and explain any parts of the library that may not be clear. It would be also possible to e.g. open a Slack channel for real time cooperation.
+
+Nice to have also, a zooming & panning refactoring to use a global transformation matrix instead of the current separate axes / content view transforms. This is only to improve code quality. It may sound easy but due to some implementation details of SwiftCharts it is a bit complicated. More details [here](http://stackoverflow.com/questions/41337146/apply-transform-matrix-to-core-graphics-drawing-and-subview). 
+
+## Created By:
 
 Ivan Schütz
 
-##### License
+## Credits:
+
+A big thank you to the awesome [grafiti.io](https://grafiti.io/) for having been sponsoring this project in the last months, and of course also to all the [contributors](https://github.com/i-schuetz/SwiftCharts/graphs/contributors)! 
+
+## License
 
 SwiftCharts is Copyright (c) 2015 Ivan Schütz and released as open source under the attached [Apache 2.0 license](LICENSE).
 

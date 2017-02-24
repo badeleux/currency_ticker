@@ -11,6 +11,9 @@
 		6F0A08FA17C6BD5D14B047CD /* Pods_CurrencyTickeriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E016324819872F6F7549063 /* Pods_CurrencyTickeriOS.framework */; };
 		7C0E0461708F5A70CA8A307B /* Pods_CurrencyTicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB93FDA6F512C2E4D0CA38C6 /* Pods_CurrencyTicker.framework */; };
 		93F8933172C6CDFA680E1D73 /* Pods_CurrencyTickerKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB5A13AB8AEE4CAD7E1121A /* Pods_CurrencyTickerKitTests.framework */; };
+		ED1FB9CF1E603C3800F1DDD9 /* CurrencyHistoricalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9CE1E603C3800F1DDD9 /* CurrencyHistoricalDataViewModel.swift */; };
+		ED1FB9E21E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9E11E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift */; };
+		ED1FB9E41E60569700F1DDD9 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FB9E31E60569700F1DDD9 /* Formatters.swift */; };
 		ED22F4CD1E57636C00E98912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22F4CC1E57636C00E98912 /* AppDelegate.swift */; };
 		ED22F4D21E57636C00E98912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D01E57636C00E98912 /* Main.storyboard */; };
 		ED22F4D41E57636C00E98912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED22F4D31E57636C00E98912 /* Assets.xcassets */; };
@@ -30,6 +33,7 @@
 		ED496D271E5F79140007107D /* EmptyStateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED496D261E5F79140007107D /* EmptyStateDataSource.swift */; };
 		ED496D291E5F7AC80007107D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED496D281E5F7AC80007107D /* Localizable.strings */; };
 		ED6333F11E5F7D5E0047F7B2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6333F01E5F7D5E0047F7B2 /* Fonts.swift */; };
+		ED6333F81E6029690047F7B2 /* CandleStickInteractiveChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6333F71E6029690047F7B2 /* CandleStickInteractiveChartViewController.swift */; };
 		ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */; };
 		ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */; };
 		ED88EF291E57A2370088B0C0 /* DateFormattersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */; };
@@ -136,6 +140,9 @@
 		9282A13B84891A7181F2B839 /* Pods-CurrencyTickerKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickerKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickerKitTests/Pods-CurrencyTickerKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB93FDA6F512C2E4D0CA38C6 /* Pods_CurrencyTicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyTicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE24AE9F3810A822ABB9B33 /* Pods-CurrencyTickeriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTickeriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyTickeriOS/Pods-CurrencyTickeriOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ED1FB9CE1E603C3800F1DDD9 /* CurrencyHistoricalDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHistoricalDataViewModel.swift; sourceTree = "<group>"; };
+		ED1FB9E11E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHistoricalDataViewModelSpec.swift; sourceTree = "<group>"; };
+		ED1FB9E31E60569700F1DDD9 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		ED22F4C91E57636C00E98912 /* CurrencyTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22F4CC1E57636C00E98912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED22F4D11E57636C00E98912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 		ED496D261E5F79140007107D /* EmptyStateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateDataSource.swift; sourceTree = "<group>"; };
 		ED496D281E5F7AC80007107D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		ED6333F01E5F7D5E0047F7B2 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		ED6333F71E6029690047F7B2 /* CandleStickInteractiveChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandleStickInteractiveChartViewController.swift; sourceTree = "<group>"; };
 		ED88EF201E5795CA0088B0C0 /* YahooFinanceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooFinanceRouter.swift; sourceTree = "<group>"; };
 		ED88EF231E579DCD0088B0C0 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		ED88EF281E57A2370088B0C0 /* DateFormattersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormattersSpec.swift; sourceTree = "<group>"; };
@@ -358,6 +366,8 @@
 				ED9E40F31E5CF99C00D0222C /* CurrencyTableViewCell.swift */,
 				ED496D261E5F79140007107D /* EmptyStateDataSource.swift */,
 				ED6333F01E5F7D5E0047F7B2 /* Fonts.swift */,
+				ED6333F71E6029690047F7B2 /* CandleStickInteractiveChartViewController.swift */,
+				ED1FB9E31E60569700F1DDD9 /* Formatters.swift */,
 			);
 			path = CurrencyTickeriOS;
 			sourceTree = "<group>";
@@ -440,6 +450,7 @@
 			children = (
 				ED9E40F51E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift */,
 				ED9E40F71E5E092200D0222C /* LoadableViewModel.swift */,
+				ED1FB9CE1E603C3800F1DDD9 /* CurrencyHistoricalDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -448,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				ED9E40FA1E5E1A0100D0222C /* LoadableViewModelSpec.swift */,
+				ED1FB9E11E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -901,6 +913,7 @@
 				EDE295231E57B75100BF4F7A /* Bundle.swift in Sources */,
 				ED9E40F81E5E092200D0222C /* LoadableViewModel.swift in Sources */,
 				ED88EF241E579DCD0088B0C0 /* DateFormatters.swift in Sources */,
+				ED1FB9CF1E603C3800F1DDD9 /* CurrencyHistoricalDataViewModel.swift in Sources */,
 				ED88EF211E5795CA0088B0C0 /* YahooFinanceRouter.swift in Sources */,
 				ED9E40F61E5D8AC000D0222C /* CurrecyExchangeRatesViewModel.swift in Sources */,
 				ED9E40F21E5CF63900D0222C /* SignalProducer+IgnoreError.swift in Sources */,
@@ -914,6 +927,7 @@
 			files = (
 				EDE295211E57B31F00BF4F7A /* YahooCurrencySpec.swift in Sources */,
 				ED9E40FB1E5E1A0100D0222C /* LoadableViewModelSpec.swift in Sources */,
+				ED1FB9E21E6044AE00F1DDD9 /* CurrencyHistoricalDataViewModelSpec.swift in Sources */,
 				ED88EF2B1E57A4010088B0C0 /* YahooFinanceRouterSpec.swift in Sources */,
 				ED22F5011E5767AD00E98912 /* CurrencyTickerKitTests.swift in Sources */,
 				EDE295271E5850F500BF4F7A /* YahooDecodersSpec.swift in Sources */,
@@ -930,7 +944,9 @@
 				ED6333F11E5F7D5E0047F7B2 /* Fonts.swift in Sources */,
 				ED9E40BC1E5C3F8300D0222C /* DashboardViewController.swift in Sources */,
 				ED9E40F41E5CF99C00D0222C /* CurrencyTableViewCell.swift in Sources */,
+				ED6333F81E6029690047F7B2 /* CandleStickInteractiveChartViewController.swift in Sources */,
 				ED9E40C01E5C4F5500D0222C /* DashboardDataProvider.swift in Sources */,
+				ED1FB9E41E60569700F1DDD9 /* Formatters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

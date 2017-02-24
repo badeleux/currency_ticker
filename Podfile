@@ -4,6 +4,7 @@ use_frameworks!
 def shared_pods
     pod 'ReactiveSwift'
     pod 'Moya-Argo/ReactiveCocoa'
+    pod 'SwiftDate', '~> 4.0'
 end
 
 target 'CurrencyTicker' do
@@ -14,7 +15,6 @@ target 'CurrencyTickerKit' do
     shared_pods
     pod 'Alamofire', '~> 4.3'
     pod 'Curry'
-    pod 'SwiftDate', '~> 4.0'
     pod 'Ogra'
     
     target 'CurrencyTickerKitTests' do

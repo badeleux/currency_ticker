@@ -13,6 +13,7 @@ import ReactiveSwift
 import Result
 import Moya
 import DZNEmptyDataSet
+import SwiftDate
 
 class DashboardViewController: UITableViewController {
     static let CurrencyCellReuseIdentifier = "CurrencyCell"
@@ -69,8 +70,13 @@ class DashboardViewController: UITableViewController {
  
     //MARK: UITableViewDelegate
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        let rate = self.rates.value[indexPath.row]
+        //        let currencyCode = rate.name.currencies.first!
+        let viewModel = self.viewModel.yahooChartViewModel()
+        viewModel.configureWith(currencyCode: "PLN")
+        viewModel.timePeriod(last: 1.month)
+        self.navigationController?.pushViewController(CandleStickInteractiveChartViewController(chartViewModel: viewModel), animated: true)
     }
     
     //MARK: UITableViewDataSource
