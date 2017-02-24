@@ -95,6 +95,12 @@ class DashboardViewController: UITableViewController {
         let rate = self.rates.value[ip.row]
         cell.currencyCodeLabel.text = rate.name.name
         cell.rateLabel.text = rate.rate?.description ?? "-"
+        if let d = rate.date {
+            cell.lastUpdatedLabel.text = try? d.colloquialSinceNow().colloquial
+        }
+        else {
+            cell.lastUpdatedLabel.text = ""
+        }
     }
 }
 
