@@ -13,19 +13,23 @@ import Result
 import Moya
 
 struct ChartSettings {
-    static let XAxisValues = 20
+    static let XAxisValues = 8
     static let YAxisValues = 20
 }
 
-public protocol CandleStickData {
+public protocol ChartPointData {
+    var date: Date { get }
+
+}
+
+public protocol CandleStickData: ChartPointData {
     var open: Float { get }
     var high: Float { get }
     var low: Float { get }
     var close: Float { get }
-    var date: Date { get }
 }
 
-public struct CurrencyChartData<T: CandleStickData> {
+public struct CurrencyChartData<T: ChartPointData> {
     public let points: [T]
     public let xAxisDates: [Date]
     public let yAxisValues: [Float]
@@ -36,18 +40,19 @@ struct ChartTimePeriod {
     let endDate: Date
     
     func days() -> [Date] {
-        return Date.dates(between: self.startDate, and: self.endDate, increment: 1.day)
+        let dates = Date.dates(between: self.startDate, and: self.endDate, increment: 1.day)
+        return dates.count < ChartSettings.XAxisValues ? dates : Date.dates(between: self.startDate, and: self.endDate, increment: (dates.count / ChartSettings.XAxisValues).day)
     }
 }
 
-protocol CurrencyHistoricalDataViewModelInputs {
+public protocol CurrencyHistoricalDataViewModelInputs {
     func configureWith(currencyCode: CurrencyCode)
     func timePeriod(start: Date, end: Date)
     func timePeriod(last: DateComponents)
 }
 
-protocol CurrencyHistoricalDataViewModelOutputs {
-    associatedtype T: CandleStickData
+public protocol CurrencyHistoricalDataViewModelOutputs {
+    associatedtype T: ChartPointData
     var chartData: Signal<CurrencyChartData<T>, NoError> { get }
 }
 
@@ -80,17 +85,16 @@ public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistor
     init<R: HistoricalDataRetriever>(api: R) where R.T == T {
         let loadingProperty = MutableProperty(false)
         let errorProperty = MutableProperty<MoyaError?>(nil)
-        let historicalData = self.currencyCode.signal.skipNil().combineLatest(with: self.timePeriod.signal.skipNil()).flatMap(.latest) { (tuple: (currencyCode: CurrencyCode, period: ChartTimePeriod)) -> SignalProducer<[T], NoError> in
+        self.chartData = self.currencyCode.signal.skipNil().combineLatest(with: self.timePeriod.signal.skipNil()).flatMap(.latest) { (tuple: (currencyCode: CurrencyCode, period: ChartTimePeriod)) -> SignalProducer<CurrencyChartData<T>, NoError> in
             return api.currencyHistoricalData(currencyCode: tuple.currencyCode, start: tuple.period.startDate, end: tuple.period.endDate)
                 .forwardError(property: errorProperty)
                 .forwardLoading(property: loadingProperty)
                 .ignoreError()
+                .map({ (data: [T]) -> CurrencyChartData<T> in
+                    let yAxisValues = CurrencyHistoricalDataViewModel.axisValues(data: data)
+                    return CurrencyChartData(points: data, xAxisDates: tuple.period.days(), yAxisValues: yAxisValues)
+                })
         }
-        self.chartData = historicalData.signal.combineLatest(with: self.timePeriod.signal.skipNil())
-            .map({ (tuple: (data: [T], period: ChartTimePeriod)) -> CurrencyChartData<T> in
-                let yAxisValues = CurrencyHistoricalDataViewModel.axisValues(data: tuple.data)
-                return CurrencyChartData(points: tuple.data, xAxisDates: tuple.period.days(), yAxisValues: yAxisValues)
-            })
         self.loadingProperty = loadingProperty
         self.errorProperty = errorProperty
         self.loading = loadingProperty.signal

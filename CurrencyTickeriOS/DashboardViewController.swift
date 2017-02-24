@@ -14,6 +14,17 @@ import Result
 import Moya
 import DZNEmptyDataSet
 import SwiftDate
+import ChameleonFramework
+
+struct CellTheme {
+    let bgColor = RandomFlatColorWithShade(.light)
+    init() {
+        self.bgContrastColor = ContrastColorOf(self.bgColor, returnFlat: true)
+        self.selectionColor = self.bgColor.darken(byPercentage: 0.1)!
+    }
+    let bgContrastColor: UIColor
+    let selectionColor: UIColor
+}
 
 class DashboardViewController: UITableViewController {
     static let CurrencyCellReuseIdentifier = "CurrencyCell"
@@ -21,6 +32,9 @@ class DashboardViewController: UITableViewController {
     let viewModel = CurrecyExchangeRatesViewModel()
     let rates = MutableProperty<[YahooCurrencyExchanceRate]>([])
     let emptyState = EmptyStateDataSource(screen: .dashboard)
+    
+    let evenCellTheme = CellTheme()
+    let oddCellTheme = CellTheme()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +56,12 @@ class DashboardViewController: UITableViewController {
         self.tableView.emptyDataSetDelegate = self
         
         //data setup
-        FavouriteCurrency.shared.stream.observeValues { [weak self] (currencies: [CurrencyCode]) in
-            self?.viewModel.configureWith(codes: currencies)
-        }
+        FavouriteCurrency.shared
+            .stream
+            .take(during: self.reactive.lifetime)
+            .observeValues { [weak self] (currencies: [CurrencyCode]) in
+                self?.viewModel.configureWith(codes: currencies)
+            }
         self.rates <~ viewModel.rates.map { $0?.rates ?? [] }
         
         
@@ -71,8 +88,8 @@ class DashboardViewController: UITableViewController {
         let currencyCode = FavouriteCurrency.shared.get()[indexPath.row]
         let viewModel = self.viewModel.yahooChartViewModel()
         viewModel.configureWith(currencyCode: currencyCode)
-        viewModel.timePeriod(last: 1.month)
-        self.navigationController?.pushViewController(CandleStickInteractiveChartViewController(chartViewModel: viewModel), animated: true)
+        let detailVC = CurrencyChartDetailViewController(currencyCode: currencyCode, viewModel: viewModel, chartType: CandleStickInteractiveChartViewController.self)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     //MARK: UITableViewDataSource
@@ -95,6 +112,7 @@ class DashboardViewController: UITableViewController {
         let rate = self.rates.value[ip.row]
         cell.currencyCodeLabel.text = rate.name.name
         cell.rateLabel.text = rate.rate?.description ?? "-"
+        cell.cellTheme = ip.row % 2 == 0 ? self.evenCellTheme : self.oddCellTheme
         if let d = rate.date {
             cell.lastUpdatedLabel.text = try? d.colloquialSinceNow().colloquial
         }

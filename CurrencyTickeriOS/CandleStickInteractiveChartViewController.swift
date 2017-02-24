@@ -12,6 +12,7 @@ import ReactiveSwift
 import UIKit
 import CurrencyTickerKit
 import ReactiveCocoa
+import EasyPeasy
 
 extension CandleStickData {
     func toChartData() -> ChartPointCandleStick {
@@ -19,7 +20,7 @@ extension CandleStickData {
     }
 }
 
-class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewController {
+class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewController, CurrencyChartViewController {
     
     fileprivate var chart: Chart? // arc
     let chartViewModel: CurrencyHistoricalDataViewModel<T>
@@ -41,8 +42,8 @@ class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewContr
         return chartSettings
     }
     
-    init(chartViewModel: CurrencyHistoricalDataViewModel<T>) {
-        self.chartViewModel = chartViewModel
+    required init(viewModel: CurrencyHistoricalDataViewModel<T>) {
+        self.chartViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,13 +58,12 @@ class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewContr
         self.emptyView!.emptyStateDataSource.state <~ self.chartViewModel.emptyListState()
         self.emptyView!.reactive.isHidden <~ self.chartViewModel.chartData.signal.map { _ in true }
         self.view.addSubview(self.emptyView!)
+        self.emptyView! <- Edges(0)
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.view.backgroundColor = UIColor.white
         self.chartViewModel.chartData.signal.observeValues { [weak self] (data: CurrencyChartData<T>) in
-            if let c = self?.chart {
-                c.view.removeFromSuperview()
-            }
+            self?.view.subviews.forEach { $0.removeFromSuperview() }
             if let chart = self?.createChart(data: data) {
                 self?.view.addSubview(chart.view)
                 self?.chart = chart
@@ -80,8 +80,8 @@ class CandleStickInteractiveChartViewController<T: CandleStickData>: UIViewContr
         let points = data.points.map { $0.toChartData() }
         let labelSettings = ChartLabelSettings(font: UIFont.annotationFont)
         
-        let xValues = self.hideValues(values: data.xAxisDates
-            .map { ChartAxisValueDate(date: $0, formatter: DefaultDateFormatter.shared.chartAxis, labelSettings: labelSettings) }, toLimit: 10)
+        let xValues = data.xAxisDates
+            .map { ChartAxisValueDate(date: $0, formatter: DefaultDateFormatter.shared.chartAxis, labelSettings: labelSettings) }
         
         let yValues = data.yAxisValues.map { ChartAxisValueDouble(Double($0), labelSettings: labelSettings) }
         

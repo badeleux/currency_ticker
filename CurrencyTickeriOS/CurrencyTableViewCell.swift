@@ -15,18 +15,22 @@ class CurrencyTableViewCell: UITableViewCell {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     
+    var cellTheme: CellTheme? {
+        didSet {
+            if let theme = self.cellTheme {
+                self.contentView.backgroundColor = theme.bgColor
+                self.currencyCodeLabel.textColor = theme.bgContrastColor
+                self.rateLabel.textColor = theme.bgContrastColor
+                self.lastUpdatedLabel.textColor = theme.bgContrastColor
+                self.selectedBackgroundView?.backgroundColor = theme.selectionColor
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        let bgColor = RandomFlatColorWithShade(.light)
-        let bgContrastColor = ContrastColorOf(bgColor, returnFlat: true)
-        self.contentView.backgroundColor = bgColor
-        self.currencyCodeLabel.textColor = bgContrastColor
-        self.rateLabel.textColor = bgContrastColor
         
         let selectionView = UIView(frame: self.contentView.frame)
-        selectionView.backgroundColor = bgColor.darken(byPercentage: 0.1)
         self.selectedBackgroundView = selectionView
-        
-        self.lastUpdatedLabel.textColor = bgContrastColor
     }
 }
