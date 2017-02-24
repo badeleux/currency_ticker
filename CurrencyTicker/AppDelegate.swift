@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Chameleon.setGlobalThemeUsingPrimaryColor(FlatTeal(), withSecondaryColor: FlatGray(), usingFontName: "KohinoorDevanagari-Book", andContentStyle: .light)
+        if #available(iOS 9.0, *) {
+            UIButton.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).backgroundColor = .white
+            UIImageView.appearance(whenContainedInInstancesOf: [UITableViewCell.self]).tintColor = .black
+        } else {
+            // Fallback on earlier versions
+        }
+
         return true
     }
 

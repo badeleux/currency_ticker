@@ -11,3 +11,8 @@
 "empty_state_error" = "Error occurred";
 "fav_currency_all_currencies_header" = "All Currencies";
 "fav_currency_common_currencies_header" = "Common Currencies";
+
+"chart_time_period_last_week" = "Last Week";
+"chart_time_period_last_month" = "Last Month";
+"chart_time_period_last_three_months" = "3 months";
+"chart_time_period_last_six_months" = "6 months";

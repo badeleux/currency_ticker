@@ -28,11 +28,10 @@ end
 target 'CurrencyTickeriOS' do
     shared_pods
     pod 'DZNEmptyDataSet'
-    #pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
     pod 'EasyPeasy'
     pod 'ReactiveCocoa'
     pod 'SwiftCharts', '~> 0.5'
     pod 'SwiftMessages'
-    pod 'FoldingCell'
     pod 'TextAttributes'
 end
