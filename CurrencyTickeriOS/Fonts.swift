@@ -16,4 +16,10 @@ extension UIFont {
     static var descriptionFont: UIFont {
         return UIFont(name: "KohinoorDevanagari-Book", size: 17.0)!
     }
+    
+    static var annotationFont: UIFont {
+        return UIFont(name: "KohinoorDevanagari-Light", size: 13.0)!
+    }
+    
+    
 }

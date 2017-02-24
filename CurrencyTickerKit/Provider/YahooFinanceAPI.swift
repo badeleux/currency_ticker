@@ -13,6 +13,11 @@ import Moya
 import ReactiveSwift
 import Argo
 
+protocol HistoricalDataRetriever {
+    associatedtype T: CandleStickData
+    func currencyHistoricalData(currencyCode: CurrencyCode, start: Date, end: Date) -> SignalProducer<[T], MoyaError>
+}
+
 
 public class YahooFinanceAPI {
     let provider = ReactiveSwiftMoyaProvider<YahooFinanceRouter>(plugins: [NetworkLoggerPlugin()])
@@ -50,4 +55,10 @@ public class YahooFinanceAPI {
             .mapObject(type: YahooSymbolHistoricalDataQueryResult.self, rootKey: "query")
     }
     
+}
+
+extension YahooFinanceAPI: HistoricalDataRetriever {
+    func currencyHistoricalData(currencyCode: CurrencyCode, start: Date, end: Date) -> SignalProducer<[YahooSymbolHistoricalData], MoyaError> {
+        return self.currencyHistoricalData(symbol: YahooCurrencySymbol(code: currencyCode), start: start, end: end).map { $0.data }
+    }
 }

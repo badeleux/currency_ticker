@@ -9,7 +9,7 @@
 import Foundation
 
 extension DateFormatter {
-    static func yahooDateOnly() -> DateFormatter {
+    public static func yahooDateOnly() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-dd"
         return formatter
