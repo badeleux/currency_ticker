@@ -180,10 +180,10 @@ extension YahooCurrency: Decodable, Encodable {
 
 public struct YahooCurrencyExchanceRate {
     public let name: YahooCurrencyName
-    public let rate: Float
+    public let rate: Float?
     public let date: Date?
-    public let ask: Float
-    public let bid: Float
+    public let ask: Float?
+    public let bid: Float?
 }
 
 extension YahooCurrencyExchanceRate: Decodable {
@@ -191,10 +191,10 @@ extension YahooCurrencyExchanceRate: Decodable {
     public static func decode(_ json: JSON) -> Decoded<YahooCurrencyExchanceRate> {
         let a = curry(YahooCurrencyExchanceRate.init)
             <^> json <| "Name"
-            <*> (json <| "Rate" >>- YahooNumberDecoders.toFloat)
+            <*> (json <|? "Rate" >>- YahooNumberDecoders.optToFloat)
             <*> YahooDateDecoders.decodeExchangeRateDate(json)
-        return a <*> (json <| "Ask" >>- YahooNumberDecoders.toFloat)
-            <*> (json <| "Bid" >>- YahooNumberDecoders.toFloat)
+        return a <*> (json <|? "Ask" >>- YahooNumberDecoders.optToFloat)
+            <*> (json <|? "Bid" >>- YahooNumberDecoders.optToFloat)
     }
 }
 

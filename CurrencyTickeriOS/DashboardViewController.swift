@@ -97,7 +97,7 @@ class DashboardViewController: UITableViewController {
     func configureCell(cell: CurrencyTableViewCell, forRowAtIndexPath ip: IndexPath) {
         let rate = self.rates.value[ip.row]
         cell.currencyCodeLabel.text = rate.name.name
-        cell.rateLabel.text = rate.rate.description
+        cell.rateLabel.text = rate.rate?.description ?? "-"
     }
 }
 

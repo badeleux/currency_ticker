@@ -45,4 +45,11 @@ struct YahooNumberDecoders {
     static func toFloat(number: String) -> Decoded<Float> {
         return .fromOptional(Float(number))
     }
+    
+    static func optToFloat(number: String?) -> Decoded<Float?> {
+        if let n = number {
+            return .fromOptional(Float(n))
+        }
+        return .success(nil)
+    }
 }

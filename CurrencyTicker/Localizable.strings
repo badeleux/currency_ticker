@@ -9,3 +9,5 @@
 "empty_state_no_data" = "No Data";
 "empty_state_loading" = "Loading...";
 "empty_state_error" = "Error occurred";
+"fav_currency_all_currencies_header" = "All Currencies";
+"fav_currency_common_currencies_header" = "Common Currencies";

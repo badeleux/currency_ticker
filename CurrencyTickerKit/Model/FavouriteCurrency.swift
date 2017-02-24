@@ -26,6 +26,16 @@ public class FavouriteCurrency {
         self.userDefaults.synchronize()
     }
     
+    public func remove(currency: CurrencyCode) {
+        var currencies = self.get()
+        let index = currencies.index(of: currency)
+        if let i = index {
+            currencies.remove(at: i)
+            self.userDefaults.set(currencies, forKey: FavouriteCurrency.FavCurrenciesKey)
+            self.userDefaults.synchronize()
+        }
+    }
+    
     public func get() -> [CurrencyCode] {
         if let o = self.userDefaults.object(forKey: FavouriteCurrency.FavCurrenciesKey) as? [CurrencyCode] {
             return o

@@ -19,7 +19,7 @@
         <scene sceneID="Pg9-wj-HwM">
             <objects>
                 <navigationController id="3UR-z8-d4M" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="beH-Kt-npH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="beH-Kt-npH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -78,11 +78,79 @@
                             <outlet property="delegate" destination="Anf-Gb-eNI" id="vaN-cQ-fTb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dashboard" id="LOf-JU-2S8"/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="LOf-JU-2S8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="uC3-hw-3eI">
+                            <connections>
+                                <segue destination="8fT-RP-0gh" kind="presentation" id="jJa-5o-Qya"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USw-MY-ZkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="316" y="-305"/>
+        </scene>
+        <!--Favourite Currencies-->
+        <scene sceneID="XZm-AS-oBa">
+            <objects>
+                <tableViewController title="Favourite Currencies" id="9bO-qA-Hnx" customClass="EditFavouriteCurrenciesViewController" customModule="CurrencyTickeriOS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZXg-sy-ynD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" textLabel="NlH-cz-0jA" style="IBUITableViewCellStyleDefault" id="1FH-Re-IEn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1FH-Re-IEn" id="KRX-6U-s6j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NlH-cz-0jA">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9bO-qA-Hnx" id="f32-ZH-FID"/>
+                            <outlet property="delegate" destination="9bO-qA-Hnx" id="8Hu-Jt-fEX"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Favourite Currencies" id="hnz-ad-oea">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6N1-CN-Ano">
+                            <connections>
+                                <action selector="done:" destination="9bO-qA-Hnx" id="cu2-Tg-DO7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JkZ-y7-lNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-627"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EOT-Me-AvD">
+            <objects>
+                <navigationController id="8fT-RP-0gh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hBA-rT-FJQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9bO-qA-Hnx" kind="relationship" relationship="rootViewController" id="RyE-3w-FN4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UK3-3a-d3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="-610"/>
         </scene>
     </scenes>
 </document>
