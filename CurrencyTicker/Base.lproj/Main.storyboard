@@ -83,7 +83,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dashboard" id="LOf-JU-2S8">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="uC3-hw-3eI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="uC3-hw-3eI">
                             <connections>
                                 <segue destination="8fT-RP-0gh" kind="presentation" id="jJa-5o-Qya"/>
                             </connections>
