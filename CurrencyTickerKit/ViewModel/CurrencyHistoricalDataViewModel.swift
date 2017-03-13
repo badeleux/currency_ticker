@@ -57,6 +57,7 @@ public protocol CurrencyHistoricalDataViewModelOutputs {
 }
 
 public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistoricalDataViewModelInputs, CurrencyHistoricalDataViewModelOutputs, LoadableViewModel {
+
     
     // MARK: - Inputs
     let currencyCode = MutableProperty<CurrencyCode?>(nil)
@@ -77,6 +78,8 @@ public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistor
     // MARK: - Outputs
     public let loading: Signal<Bool, NoError>
     public let error: Signal<MoyaError, NoError>
+    public var noData: Signal<Bool, NoError>
+    
     private let loadingProperty: MutableProperty<Bool>
     private let errorProperty: MutableProperty<MoyaError?>
     
@@ -99,6 +102,7 @@ public class CurrencyHistoricalDataViewModel<T: CandleStickData>: CurrencyHistor
         self.errorProperty = errorProperty
         self.loading = loadingProperty.signal
         self.error = errorProperty.signal.skipNil()
+        self.noData = self.currencyCode.signal.map { $0 == nil }
     }
     
     static func axisValues(data: [T], values: Int = ChartSettings.XAxisValues) -> [Float] {

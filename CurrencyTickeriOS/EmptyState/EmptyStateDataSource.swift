@@ -36,7 +36,8 @@ extension LoadableViewModel {
         let loading = self.loading
             .filter { $0 }
             .map { _ in EmptyListState.loading }
-        let state = Signal<EmptyListState, NoError>.merge(errorState, loading)
+        let noData = self.noData.filter { $0 }.map { _ in EmptyListState.noData }
+        let state = Signal<EmptyListState, NoError>.merge(errorState, loading, noData)
         return state
     }
 }

@@ -25,6 +25,7 @@ public class CurrecyExchangeRatesViewModel: LoadableViewModel, CurrencyExchangeR
     
     public let error: Signal<MoyaError, NoError>
     public let loading: Signal<Bool, NoError>
+    public let noData: Signal<Bool, NoError>
     
     private let errorProperty = MutableProperty<MoyaError?>(nil)
     private let loadingProperty = MutableProperty<Bool>(false)
@@ -32,15 +33,22 @@ public class CurrecyExchangeRatesViewModel: LoadableViewModel, CurrencyExchangeR
     public init() {
         self.error = errorProperty.signal.skipNil()
         self.loading = loadingProperty.signal
+        self.noData = self.currencyCodes.signal.map { $0.count == 0 }
         
-        let result = self.currencyCodes.signal.flatMap(.latest, transform: { (codes: [CurrencyCode]) -> SignalProducer<AnyYahooCurrenciesExchangeQueryResult?, NoError> in
-            let api = YahooFinanceAPI.shared
-                .currenciesExchange(pairs: codes.flatMap { self.toPair(code: $0) })
-                .map { Optional($0) }
-            return api
-                .forwardError(property: self.errorProperty)
-                .forwardLoading(property: self.loadingProperty)
-                .ignoreError()
+        let result = self.currencyCodes.signal
+            .flatMap(.latest, transform: { (codes: [CurrencyCode]) -> SignalProducer<AnyYahooCurrenciesExchangeQueryResult?, NoError> in
+                if codes.count > 0 {
+                    let api = YahooFinanceAPI.shared
+                        .currenciesExchange(pairs: codes.flatMap { self.toPair(code: $0) })
+                        .map { Optional($0) }
+                    return api
+                        .forwardError(property: self.errorProperty)
+                        .forwardLoading(property: self.loadingProperty)
+                        .ignoreError()
+                }
+                else {
+                    return .init(value: nil)
+                }
         })
         ratesQueryResult <~ result
         

@@ -14,6 +14,7 @@ public protocol LoadableViewModel {
     associatedtype E: Error
     var loading: Signal<Bool, NoError> { get }
     var error: Signal<E, NoError> { get }
+    var noData: Signal<Bool, NoError> { get }
 }
 
 extension LoadableViewModel {
